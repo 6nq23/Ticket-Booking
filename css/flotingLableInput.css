@@ -1,0 +1,56 @@
+.input-container {
+  position: relative;
+  margin: 10px 0;
+  font-weight: 550;
+}
+
+.text-input,
+.passenger-input {
+  font-size: 16px;
+  outline: none;
+  background-color: #fff;
+  width: -webkit-fill-available;
+  height: 23px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 12px;
+  top: 12px;
+  transition: 0.2s ease all;
+  color: #808080;
+  background-color: white;
+  padding: 0 5px;
+}
+
+.text-input.focused ~ .floating-label,
+.text-input.not-empty ~ .floating-label,
+.passenger-input.focused ~ .floating-label,
+.passenger-input.not-empty ~ .floating-label {
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.arrow {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  width: 7px;
+  height: 7px;
+  border-left: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+  transform: rotate(-45deg);
+  transition: transform 0.3s;
+}
+
+.input-container.open .arrow {
+  transform: rotate(-225deg) translateY(-2px);
+}

@@ -1,0 +1,13 @@
+.disable {
+  color: #808080;
+}
+.active {
+  color: #3baec9;
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: flex;
+}

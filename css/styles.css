@@ -1,0 +1,187 @@
+:root {
+  --primary-color: #3baec9;
+  --disable-color: #808080;
+  --border-color: #b9b4c0;
+  --main-heading-font-size: 22px;
+  --sub-heading-font-size: 20px;
+  --medium-text-font-size: 15px;
+  --small-text-font-size: 13px;
+  --error-background-color: #FFEAEF;
+  --error-text-color: #f5a0a5;
+  --error-icon-color: #fd525b;
+  --padding: 10px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sub-heading {
+  font-size: var(--sub-heading-font-size);
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 30px;
+}
+
+.container {
+  padding: 10px 20px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.header h1 {
+  font-size: var(--main-heading-font-size);
+  margin: 0;
+}
+.header .help-btn {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+.main-header-container a {
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+.arrow-and-heading-wrapper {
+  display: flex;
+  gap: 15px;
+}
+.recent-orders {
+  margin: 20px 0;
+}
+.recent-order-heading-container {
+  display: flex;
+  justify-content: space-between;
+}
+.recent-order-heading-container > a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+.recent-order-heading {
+  padding-top: 0px;
+}
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.order-item button {
+  border: 1px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+  padding: 10px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.buy-ticket-option-wrapper {
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 1.5px var(--border-color);
+}
+.buy-ticket {
+  margin: 20px 0;
+}
+.buy-ticket label {
+  display: block;
+  margin-bottom: 5px;
+}
+.pay-option {
+  display: flex;
+  gap: 8px;
+  padding: 10px 0px;
+  margin-bottom: 5px;
+}
+.pay-option img {
+  width: 30px;
+  height: 25px;
+}
+.buy-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  height: 36px;
+  text-align: center;
+}
+.past-ticket {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 69%;
+}
+.past-ticket-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.from-past,
+.to-past {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 700;
+}
+.material-symbols-outlined {
+  color: var(--disable-color);
+}
+.ticket-count {
+  color: var(--disable-color);
+  font-size: var(--small-text-font-size);
+}
+.from-input-wrapper {
+  margin-top: 0px;
+}
+.passenger-input {
+  margin-bottom: 0px;
+}
+.passenger-input-wrapper {
+  margin-bottom: 6px;
+}
+.balance-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.balance-heading {
+  font-weight: 550;
+  font-size: var(--small-text-font-size);
+}
+.balance-value {
+  font-size: 12px;
+  color: var(--disable-color);
+}
+.footer {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  margin-top: 15px;
+  display: flex;
+  gap: 5px;
+}
+.footer > p {
+  margin: 0px;
+}
+
+
+
+

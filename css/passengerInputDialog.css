@@ -1,0 +1,115 @@
+.passenger-detail-heading-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+.add-passenger {
+  position: fixed;
+  bottom: -320px;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 20px 15px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  display: block;
+  transition: bottom 0.5s;
+}
+.open-dialog {
+  bottom: 0px;
+}
+.close-dialog {
+  bottom: -320px;
+}
+.add-passenger h2 {
+  font-size: var(--main-heading-font-size);
+  margin: 0 0 5px;
+}
+.ticket-booking-info {
+  font-size: var(--text-font-size);
+  color: var(--disable-color);
+  margin: 0 0 30px;
+}
+.ticket-booking-warning{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--small-text-font-size);
+  background-color: var(--error-background-color);
+  margin: 0 0 25px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  color: var(--error-icon-color);
+}
+.passenger-option {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  gap: 10px;
+}
+.passenger-option button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0px;
+}
+
+.child-icon,
+.adult-icon {
+  height: 35px;
+  width: 35px;
+}
+
+.minus-icon,
+.plus-icon {
+  color: var(--primary-color);
+  font-size: 30px;
+}
+.passenger-name-sub-heading {
+  font-weight: 600;
+}
+.age-description {
+  font-size: var(--small-text-font-size);
+  color: var(--border-color);
+}
+.rate {
+  font-size: var(--medium-text-font-size);
+  color: var(--disable-color);
+  padding-top: 5px;
+}
+.passenger-and-rate-detail-wrapper {
+  flex: 1;
+}
+.plus-minus-btn-wrapper {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-weight: 600;
+  font-size: var(--sub-heading-font-size);
+}
+.adult-passenger-option {
+  margin-bottom: 20px;
+}
+.save-passenger-count-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  font-size: var(--medium-text-font-size);
+}
+
