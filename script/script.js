@@ -1,5 +1,5 @@
 function openStopSelectionPage() {
-  window.location = "http://127.0.0.1:5500/stopSelection.html";
+  window.location = "https://paytm-ticket-booking.vercel.app/stopSelection.html";
 }
 
 function back() {
