@@ -1,0 +1,32 @@
+.container {
+  padding: 15px;
+}
+.header {
+  margin-top: 20px;
+  font-size: var(--sub-heading-font-size);
+}
+.help-btn {
+  font-size: var(--medium-text-font-size);
+}
+.from-input-wrapper {
+  margin-top: 25px;
+  margin-bottom: 0px;
+}
+.from-input-wrapper .text-input {
+  margin-bottom: 5px;
+}
+.to-input-wrapper {
+  margin-bottom: 20px;
+}
+.popular-stops-heading {
+  font-size: var(--sub-heading-font-size);
+  font-weight: 550;
+}
+.stop-names > p {
+  padding: 20px 0px;
+  margin: 0px;
+  /* border: 1px solid var(--border-color); */
+  box-shadow: 0px 0.5px 0px var(--border-color);
+  font-weight: 600;
+  /* font-size: var(--medium-text-font-size); */
+}
