@@ -63,33 +63,41 @@ const stops = [
 
 document.addEventListener("DOMContentLoaded", () => {
   const stopNameContainer = document.querySelector(".stop-names");
-  const fromStopInput = document.querySelector(".from-input");
-  const toStopInput = document.querySelector(".to-input");
+  const fromStopInput = document.querySelector(".starting-stop-input");
+  const toStopInput = document.querySelector(".ending-stop-input");
 
-  // console.log(stopInput);
+  var stopInputName;
 
-  fromStopInput.focus();
+  fromStopInput.addEventListener("focus", () => {
+    stopInputName = "from";
+  });
+  toStopInput.addEventListener("focus", () => {
+    stopInputName = "to";
+  });
+
+  // fromStopInput.focus();
 
   stops.forEach((stop) => {
     if (stop.popular) {
-      // console.log(stop);
       let p = document.createElement("p");
       p.innerHTML = stop.name;
+      p.addEventListener("click", () =>
+        addValueInTextbox(stop.name, stopInputName)
+      );
       stopNameContainer.appendChild(p);
     }
   });
 
   fromStopInput.addEventListener("input", (e) => {
     let searchStop = e.target.value.toLowerCase();
-    updateStopSuggetion(searchStop, "from");
+    updateStopSuggetion(searchStop, stopInputName);
   });
   toStopInput.addEventListener("input", (e) => {
-    let searchStop = e.target.value;
-    updateStopSuggetion(searchStop, "to");
+    let searchStop = e.target.value.toLowerCase();
+    updateStopSuggetion(searchStop, stopInputName);
   });
 
   function updateStopSuggetion(searchStop, inputFor) {
-    // console.log(searchStop);
     const filteredStops = stops.filter((stop) => {
       return stop.name.toLowerCase().includes(searchStop);
     });
@@ -111,15 +119,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function addValueInTextbox(stopName, inputFor) {
-    console.log("Paragraph clicked! : ", stopName, inputFor);
     if (inputFor == "from") {
+      fromStopInput.focus();
       fromStopInput.value = stopName;
       toStopInput.focus();
+      stopInputName = "to";
+      toStopInput.value = "";
     }
     if (inputFor == "to") {
+      if (fromStopInput.value == "") {
+        fromStopInput.focus();
+        return;
+      }
       toStopInput.value = stopName;
-      back();
       setSelectedStop(fromStopInput.value, toStopInput.value);
+      closeStopSelectionPage();
     }
   }
 });

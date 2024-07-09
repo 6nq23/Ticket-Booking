@@ -3,15 +3,13 @@ const addPassengerDialog = document.getElementById("add-passenger");
 const passengerInput = document.querySelector(".passenger-input");
 
 passengerInput.addEventListener("click", () => {
-  // document.getElementById('add-passenger').style.display = 'block';
-  document.getElementById("modal-backdrop").style.display = "block";
+  document.getElementById("modal-backdrop-1").style.display = "block";
   addPassengerDialog.classList.add("open-dialog");
   addPassengerDialog.classList.remove("close-dialog");
 });
 
-function closePassengerDialog() {
-  // document.getElementById('add-passenger').style.display = 'none';
-  document.getElementById("modal-backdrop").style.display = "none";
+function closePassengerDialog1() {
+  document.getElementById("modal-backdrop-1").style.display = "none";
   addPassengerDialog.classList.add("close-dialog");
   addPassengerDialog.classList.remove("open-dialog");
 }
@@ -37,7 +35,6 @@ function onDecrement(name) {
       value1--;
       updateOutputs();
     } else {
-      console.log(value1);
     }
   } else if (name === "adult") {
     if (value2 > 0) {
@@ -108,9 +105,8 @@ function savePassengerDetail() {
     result += `${value2} ${value2==1?'Adult':'Adults'}`;
   }
 
-  console.log(result);
   passengerInput.value = result;
-  closePassengerDialog();
+  closePassengerDialog1();
   return ``;
 }
 

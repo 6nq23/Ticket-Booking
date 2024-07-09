@@ -11,3 +11,10 @@
 .show {
   display: flex;
 }
+.open-dialog-from-left{
+  left: 0px;
+}
+
+.close-dialog-in-right{
+  left: 100%;
+}

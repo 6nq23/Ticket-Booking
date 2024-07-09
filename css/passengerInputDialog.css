@@ -3,18 +3,9 @@
   align-items: center;
   justify-content: space-between;
 }
-.modal-backdrop {
+.add-passenger, .buy-ticket-info-dialog {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: none;
-}
-.add-passenger {
-  position: fixed;
-  bottom: -320px;
+  bottom: -370px;
   left: 0;
   right: 0;
   background-color: #fff;
@@ -29,7 +20,7 @@
   bottom: 0px;
 }
 .close-dialog {
-  bottom: -320px;
+  bottom: -370px;
 }
 .add-passenger h2 {
   font-size: var(--main-heading-font-size);

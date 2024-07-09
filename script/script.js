@@ -1,16 +1,28 @@
+const stopSelectionDialog = document.querySelector(".stop-selection-dialog");
+const startingStopInput = document.querySelector(".starting-stop-input");
+
+const fromStopInput = document.querySelector(".from-input");
+const toStopInput = document.querySelector(".to-input");
+
 function openStopSelectionPage() {
-  window.location = "https://paytm-ticket-booking.vercel.app/stopSelection.html";
+  // window.location = "https://paytm-ticket-booking.vercel.app/stopSelection.html";
+  stopSelectionDialog.classList.add("open-dialog-from-left");
+  stopSelectionDialog.classList.remove("close-dialog-in-right");
+  startingStopInput.focus();
 }
 
 function back() {
   window.history.back();
 }
 
-function setSelectedStop(from, to) {
-  console.log(from, to);
-  const fromStopInput = document.querySelector(".from-input");
-  const toStopInput = document.querySelector(".to-input");
+function closeStopSelectionPage() {
+  stopSelectionDialog.classList.add("close-dialog-in-right");
+  stopSelectionDialog.classList.remove("open-dialog-from-left");
+}
 
+function setSelectedStop(from, to) {
+  fromStopInput.focus();
   fromStopInput.value = from;
+  toStopInput.focus();
   toStopInput.value = to;
 }

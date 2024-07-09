@@ -1,7 +1,7 @@
 .container {
   padding: 15px;
 }
-.header {
+.stop-selection-header {
   margin-top: 20px;
   font-size: var(--sub-heading-font-size);
 }
@@ -29,4 +29,15 @@
   box-shadow: 0px 0.5px 0px var(--border-color);
   font-weight: 600;
   /* font-size: var(--medium-text-font-size); */
+}
+
+.stop-selection-dialog {
+  position: fixed;
+  top: 0px;
+  left: 100%;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  display: block;
+  transition: left 0.2s;
 }

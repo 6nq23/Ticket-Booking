@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="./css/flotingLableInput.css" />
   <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="./css/passengerInputDialog.css" />
+  <link rel="stylesheet" href="./css/buyingSteps.css">
+  <link rel="stylesheet" href="./css/stopSelection.css">
   <link rel="stylesheet" href="./css/commonStyles.css">
   <style>
     .plus-icon,
@@ -38,8 +40,8 @@
         'wght' 400,
         'GRAD' 0,
         'opsz' 24;
-        color: #fd525b;
-        font-size: 20px;
+      color: #fd525b;
+      font-size: 20px;
     }
   </style>
 </head>
@@ -94,11 +96,11 @@
       <h2 class="sub-heading buy-new-ticket-heading">Buy New Ticket</h2>
       <div class="buy-ticket-option-wrapper">
         <div class="input-container from-input-wrapper">
-          <input type="text" class="text-input from-input" name="from" required onclick="openStopSelectionPage()"/>
+          <input type="text" class="text-input from-input" name="from" readonly required onclick="openStopSelectionPage()" />
           <label class="floating-label">From</label>
         </div>
         <div class="input-container to-input-wrapper">
-          <input type="text" class="text-input to-input" name="to" required onclick="openStopSelectionPage()"/>
+          <input type="text" class="text-input to-input" name="to" readonly required onclick="openStopSelectionPage()" />
           <label class="floating-label">To</label>
         </div>
         <div class="input-container passenger-input-wrapper">
@@ -122,12 +124,20 @@
         </div>
       </div>
     </div>
+    <div class="buying-info-btn">
+      <img src="./images/comment.png" alt="steps">
+      <p>How to buy Bus tickets</p>
+      <span class="material-symbols-outlined">
+        arrow_forward_ios
+      </span>
+    </div>
   </div>
-  <div class="modal-backdrop" id="modal-backdrop" onclick="closePassengerDialog()"></div>
+
+  <div class="modal-backdrop" id="modal-backdrop-1" onclick="closePassengerDialog1()"></div>
   <div class="add-passenger" id="add-passenger">
     <div class="passenger-detail-heading-wrapper">
       <h2>Add Passenger</h2>
-      <span class="material-symbols-outlined cross-btn" onclick="closePassengerDialog()">
+      <span class="material-symbols-outlined cross-btn" onclick="closePassengerDialog1()">
         cancel
       </span>
     </div>
@@ -169,8 +179,62 @@
     </div>
     <button class="save-passenger-count-button" onclick="savePassengerDetail()">Done</button>
   </div>
+
+  <div class="modal-backdrop" id="modal-backdrop-2" onclick="closePassengerDialog2()"></div>
+  <div class="buy-ticket-info-dialog" style="color: black;">
+    <div class="ticket-buying-steps-wrapper">
+      <h2 class="steps-heading"> How to buy Bus tickets? <span class="material-symbols-outlined cross-btn"
+          onclick="closePassengerDialog2()">
+          cancel
+        </span></h2>
+      <div class="icon">
+        <div class="ticket-buying-steps">
+          <image src="./images/step-1.png" height="50px" width="50px" id="step1"></image>
+          <div style="padding: 8px 0 0 10px;">
+            <h4 class="steps-sub-heading"> STEP 1 </h4>
+            <h4 class="steps-description"> Scan Paytm QR on QR search for<br>source and destination stop</h4>
+          </div>
+          <image src="./images/step-2.png" height="52px" width="52px" id="step2"></image>
+          <div style="padding: 1px 0 0 10px">
+            <h4 class="steps-sub-heading"> STEP 2 </h4>
+            <h4 class="steps-description"> Select route, number of passengers to<br>proceed</h4>
+          </div>
+          <image src="./images/step-3.png" height="50px" width="50px" id="step3"></image>
+          <div style="padding: 1px 0 0 10px">
+            <h4 class="steps-sub-heading"> STEP 3 </h4>
+            <h4 class="steps-description"> Complete payment to purchase ticket</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container stop-selection-dialog">
+    <div class="stop-selection-header header">
+      <div class="arrow-and-heading-wrapper">
+        <span class="material-symbols-outlined back-from-stop-selection" onclick="closeStopSelectionPage()"> arrow_back </span>
+        <h1>Select a stop - Surat</h1>
+      </div>
+      <a href="#" class="help-btn">Help</a>
+    </div>
+    <div class="input-container from-input-wrapper">
+      <input type="text" class="text-input starting-stop-input" name="from" autocomplete="off" required />
+      <label class="floating-label">From</label>
+    </div>
+    <div class="input-container to-input-wrapper">
+      <input type="text" class="text-input ending-stop-input" name="to" autocomplete="off" required />
+      <label class="floating-label">To</label>
+    </div>
+    <h2 class="popular-stops-heading">Popular Stops</h2>
+    <div class="stop-names">
+
+    </div>
+  </div>
+
   <script src="./script/flotingLabel.js"></script>
+  <script src="./script/stopSelection.js"></script>
   <script src="./script/passengerInputDialog.js"></script>
+  <script src="./script/buyingSteps.js"></script>
   <script src="./script/script.js"></script>
 </body>
 
