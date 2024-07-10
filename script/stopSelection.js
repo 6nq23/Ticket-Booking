@@ -76,17 +76,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // fromStopInput.focus();
+  function popularStops() {
+    stopNameContainer.innerHTML="";
+    stops.forEach((stop) => {
+      if (stop.popular) {
+        let p = document.createElement("p");
+        p.innerHTML = stop.name;
+        p.addEventListener("click", () =>
+          addValueInTextbox(stop.name, stopInputName)
+        );
+        stopNameContainer.appendChild(p);
+      }
+    });
+  }
 
-  stops.forEach((stop) => {
-    if (stop.popular) {
-      let p = document.createElement("p");
-      p.innerHTML = stop.name;
-      p.addEventListener("click", () =>
-        addValueInTextbox(stop.name, stopInputName)
-      );
-      stopNameContainer.appendChild(p);
-    }
-  });
+  popularStops();
 
   fromStopInput.addEventListener("input", (e) => {
     let searchStop = e.target.value.toLowerCase();
@@ -122,9 +126,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (inputFor == "from") {
       fromStopInput.focus();
       fromStopInput.value = stopName;
+      toStopInput.value = "";
       toStopInput.focus();
       stopInputName = "to";
-      toStopInput.value = "";
+      popularStops();
     }
     if (inputFor == "to") {
       if (fromStopInput.value == "") {

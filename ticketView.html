@@ -4,46 +4,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Paytm Ticket Confirmation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="./css/ticketView.css">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
-
-  <div class="trip">
-    <h3> Trip Details </h3>
-
-    <p class="operator" style="font-size: 13px; margin-top: 25px;"> OPERATOR </p>
-    <h4 class="surat"> Surat Sitilink </h4>
-
-    <p style="border-bottom: 1px dotted gray; margin-left: 10px;"> </p>
-
-    <h4> Order ID: 23769600084 <span style="color: aqua;"> copy </span></h4>
-
-    <p> For any queries regarding QR Ticket, please contact <br> Surat Sitilink with Order Id.</p>
+  <div class="confirmation-container">
+    <div class="header">
+      <span class="material-symbols-outlined" onclick="back()"> arrow_back </span>
+      <img src="./images/logo.png" alt="Paytm" id="paytm-logo">
+      <span id="help-link" class="help-btn">Help</span>
+    </div>
+    <div class="ticket-details">
+      <div id="ticket-operator-logo">
+        <img src="./images/sitilink-logo.png" alt="Operator Logo">
+      </div>
+      <div class="route-details">
+        <div class="from-location" id="from-location">Anuvrat Dwar</div>
+        <span class="material-symbols-outlined" style="color: black;">
+          arrow_forward
+        </span>
+        <div class="to-location" id="to-location">Someshwar Junction</div>
+      </div>
+      <div class="ticket-info">
+        <span id="ticket-type">1 Adult Ticket</span>
+        <div class="boy-icon-container">
+          <img src="./images/boy.png" class="boy-image" alt="boy image">
+          <h2 class="ticket-count-in-confirmation-dialog">1</h2>
+        </div>
+        <div class="ticket-verified-price">
+          <span id="ticket-price">₹4</span>
+          <img src="./images/verified.svg" alt="">
+        </div>
+        <div id="success-message">TICKET BOOKED SUCCESSFULLY</div>
+        <div id="booking-time">04 Jul 2024, 07:42 AM</div>
+      </div>
+      <div class="ticket-timer-and-btn-wrapper">
+        <div class="ticket-validity">
+          <span>Your ticket is valid for</span>
+          <div id="countdown-timer">
+            <span id="hours">01</span>:<span id="minutes">58</span>:<span id="seconds">24</span>
+          </div>
+        </div>
+        <div class="countdown-timer-labels">
+          <span>HOURS</span>
+          <span>MINUTES</span>
+          <span>SECUNDS</span>
+        </div>
+        <button id="view-tickets-button" onclick="openTicketDetailPage()">View your Tickets</button>
+      </div>
+    </div>
   </div>
 
-  <div class="payment">
-    <h3> Payment Details </h3>
-
-    <p style="font-size: 13px;"> FARE BREAKUP </p>
-
-    <h4> 1 X Adult <span style="position: absolute; right: 10px;"> &#8377;4 </span> </h4>
-
-    <p style="border-bottom: 1px solid gray;  margin-left: 10px;"> </p>
-
-    <h4> Total <span style="position: absolute; right: 10px;"> &#8377;4 </span> </h4>
-
-    <p style="border-bottom: 1px dotted gray;  margin-left: 10px;"> </p>
-
-    <p style="font-size: 13px;"> PAYMENT MODE </p>
-
-    <h4> UPI Linked Bank Account <span style="position: absolute; right: 10px;"> &#8377;4 </span> </h4>
-
-    <h5 style="opacity: 75%;"> Transaction ID: 4552004139545 </h5>
-
-  </div>
-
+  <script src="./script/ticketView.js"></script>
+  <script src="./script/script.js"></script>
 </body>
 
 </html>

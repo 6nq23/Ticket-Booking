@@ -1,4 +1,10 @@
-*{
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* *{
   font-family: Arial, Helvetica, sans-serif;
 }
 .trip {
@@ -21,4 +27,207 @@ h3, p, h4, h5{
 
 .surat {
   margin-top: -10px;
+} */
+
+/* TICKET CONFIRMATION PAGE STYLE */
+/* body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f7;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
+
+.confirmation-container {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  overflow: scroll;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#paytm-logo {
+  width: 80px;
+}
+
+#help-link {
+  color: #0070c9;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ticket-details {
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  padding: 25px 15px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ticket-details:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 9px;
+  height: 8px; /* Adjust the height of the blue border */
+  background-color: #00c5c5;
+}
+.ticket-details:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px; /* Adjust to position below the blue border */
+  height: 8px; /* Adjust the height of the aqua border */
+  background-color: #00006b;
+}
+
+#ticket-operator-logo img {
+  width: 60px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.route-details {
+  font-size: var(--main-heading-font-size);
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.from-location, .to-location{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 50%;
+}
+
+.ticket-info {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#ticket-type {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 15px;
+  padding-top: 10px;
+  font-size: var(--medium-text-font-size);
+  color: var(--disable-color);
+}
+
+.boy-icon-container{
+  display: flex;
+  padding: 2px ;
+  border-radius: 80px;
+  background-color: #fff;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.boy-icon-container h2{
+  margin: 5px 10px;
+}
+
+.boy-icon-container .boy-image{
+  height: 37px;
+  position: relative;
+  bottom: -4px;
+}
+
+.ticket-verified-price {
+  font-size: 45px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.ticket-verified-price img{
+  height: 45px;
+}
+
+#success-message {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: var(--disable-color);
+}
+
+#booking-time {
+  color: #757575;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.ticket-timer-and-btn-wrapper{
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ticket-validity {
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ticket-validity span{
+  margin-top: 10px;
+}
+
+.countdown-timer-labels{
+  display: flex;
+  gap: 20px;
+  font-size: 10px;
+  color: var(--disable-color);
+  margin-bottom: 20px;
+}
+
+#countdown-timer {
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+  width: fit-content;
+  align-items: center;
+}
+
+#view-tickets-button {
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  height: 50px;
+  width: -webkit-fill-available;
+  background-color: var(--primary-color);
+}
+
+#view-tickets-button:hover {
+  background-color: #005bb5;
 }
