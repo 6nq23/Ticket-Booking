@@ -47,7 +47,7 @@
         <div class="ticket-validity">
           <span>Your ticket is valid for</span>
           <div id="countdown-timer">
-            <span id="hours">01</span>:<span id="minutes">58</span>:<span id="seconds">24</span>
+            <span id="hours">02</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
           </div>
         </div>
         <div class="countdown-timer-labels">
@@ -58,8 +58,45 @@
         <button id="view-tickets-button" onclick="openTicketDetailPage()">View your Tickets</button>
       </div>
     </div>
+
+    <div class="ticket-confirmation-detail-view">
+      <div class="trip-detail-wrapper">
+        <div class="trip-detail-heading-wrapper">
+          <h3> Trip Details </h3>
+          <span class="material-symbols-outlined">
+            keyboard_arrow_down
+          </span>
+        </div>
+        <p class="operator-name-labe ticket-detail-sub-title"> OPERATOR </p>
+        <h4 class="operator-name-value"> Surat Sitilink </h4>
+        <p style="border-bottom: 1px dotted #b9b4c0; margin-left: 10px;"> </p>
+        <h4 class="order-id"> Order ID: 23769600084 <span style="color: #00acf1;"> copy </span></h4>
+        <p class="inquairy-info-text"> For any queries regarding QR Ticket, please contact <br> Surat Sitilink with Order Id.</p>
+      </div>
+
+      <div class="payment-wrapper">
+        <div class="payment-detail-heading-wrapper">
+          <h3> Payment Details </h3>
+          <span class="material-symbols-outlined">
+            keyboard_arrow_down
+          </span>
+        </div>
+
+        <p class="ticket-detail-sub-title"> FARE BREAKUP </p>
+        <h4> 1 X Adult <span style="position: absolute; right: 10px;"> &#8377;4 </span> </h4>
+        <p style="border-bottom: 0.5px solid #b9b4c0;  margin-left: 10px;"> </p>
+        <h4> Total <span style="position: absolute; right: 10px;"> &#8377;4 </span> </h4>
+        <p style="border-bottom: 1px dotted #b9b4c0;  margin-left: 10px;"> </p>
+        <p class="ticket-detail-sub-title"> PAYMENT MODE </p>
+        <h4> UPI Linked Bank Account <span style="position: absolute; right: 10px;"> &#8377;4 </span> </h4>
+        <h5 style="opacity: 75%; margin-bottom: 10px;"> Transaction ID: 4552004139545 </h5>
+      </div>
+    </div>
   </div>
 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/dayjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/plugin/duration.min.js"></script>
   <script src="./script/ticketView.js"></script>
   <script src="./script/script.js"></script>
 </body>
