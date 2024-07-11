@@ -37,42 +37,52 @@ const timerInterval = setInterval(() => {
 
 const tripDetailwrapper = document.querySelector(".trip-detail-wrapper");
 const paymentwrapper = document.querySelector(".payment-wrapper");
-let flag1=1
+const downArrow1 = document.querySelector(".changing-arrow1");
+const downArrow2 = document.querySelector(".changing-arrow2");
+
+let flag1 = 1;
 tripDetailwrapper.addEventListener("click", () => {
-  if(flag1==1){
+  if (flag1 == 1) {
     openDialog("trip");
-    flag1=0;
-  }else{
+    flag1 = 0;
+  } else {
     closeDialog("trip");
-    flag1=1;
+    flag1 = 1;
   }
 });
 
-let flag2=1
+let flag2 = 1;
 paymentwrapper.addEventListener("click", () => {
-  if(flag2==1){
+  if (flag2 == 1) {
     openDialog("payment");
-    flag2=0;
-  }else{
+    flag2 = 0;
+  } else {
     closeDialog("payment");
-    flag2=1;
-    console.log('abd');
+    flag2 = 1;
   }
 });
 
 function openDialog(name) {
   if (name == "trip") {
-    tripDetailwrapper.classList.add("show-dialog");
+    tripDetailwrapper.classList.add("open-wrapper");
+    downArrow1.classList.add("arrow-up");
+    downArrow1.classList.remove("arrow-down");
   }
   if (name == "payment") {
-    paymentwrapper.classList.add("show-dialog");
+    paymentwrapper.classList.add("open-wrapper");
+    downArrow2.classList.add("arrow-up");
+    downArrow2.classList.remove("arrow-down");
   }
 }
 function closeDialog(name) {
   if (name == "trip") {
-    tripDetailwrapper.classList.remove("show-dialog");
+    tripDetailwrapper.classList.remove("open-wrapper");
+    downArrow1.classList.remove("arrow-up");
+    downArrow1.classList.add("arrow-down");
   }
   if (name == "payment") {
-    paymentwrapper.classList.remove("show-dialog");
+    paymentwrapper.classList.remove("open-wrapper");
+    downArrow2.classList.remove("arrow-up");
+    downArrow2.classList.add("arrow-down");
   }
 }

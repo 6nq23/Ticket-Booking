@@ -5,7 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ticket Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="./css/ticketDetails.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/commonStyles.css">
 </head>
 
 <body>
@@ -26,9 +31,9 @@
       <div class="item">
         <h2>Anuvrat Dwar</h2>
       </div>
-      <div style="margin-top: 5px;">
-        <img src="images/forward.png" alt="">
-      </div>
+      <span class="material-symbols-outlined" style="color: #656565;">
+        arrow_forward
+      </span>
       <div class="item">
         <h2>Someshwar Junction</h2>
       </div>
@@ -46,40 +51,45 @@
     </div>
     <div class="timer-content">
       <p class="msg">Your ticket is valid for</p>
-      <div class="timer">01 : 04 : 12</div>
-      <div class="labels">
-        <div class="label">HOURS</div>
-        <div class="label">MINUTES</div>
-        <div class="label">SECONDS</div>
+      <div class="timer"><span id="hours">02</span>:<span id="minutes">00</span>:<span id="seconds">00</span></div>
+      <div class="countdown-timer-labels">
+        <span>HOURS</span>
+        <span>MINUTES</span>
+        <span>SECUNDS</span>
       </div>
     </div>
   </div>
   <div class="tc-details">
-    <div class="row">
+    <div class="first-row">
       <p style="font-weight: 600;">Ticket Details</p>
-      <img width="15" height="15" src="https://img.icons8.com/ios-glyphs/30/chevron-up.png" alt="chevron-up" />
+      <span class="material-symbols-outlined arrow-down changing-arrow">
+        keyboard_arrow_down
+      </span>
     </div>
-    <div class="row hide">
+    <div class="row">
       <p>Issued On</p>
-      <p>04 Jul 2024, 07:43 AM</p>
+      <p class="ticket-buy-date">04 Jul 2024, 07:43 AM</p>
     </div>
     <hr>
-    <div class="row hide">
+    <div class="row">
       <p>Order ID</p>
       <p>23759600084</p>
     </div>
     <hr>
-    <div class="row hide">
+    <div class="row">
       <p>Order Item ID</p>
       <p>24506492204</p>
     </div>
     <hr>
-    <div class="row hide">
+    <div class="row">
       <p>Ticket Type</p>
       <p>1 Adult</p>
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/dayjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/plugin/duration.min.js"></script>
+  <script src="./script/ticketDetails.js"></script>
   <script src="./script/script.js"></script>
 </body>
 

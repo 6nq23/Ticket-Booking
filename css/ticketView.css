@@ -9,8 +9,8 @@ body {
   padding: 0 10px 10px 10px;
   border-radius: 9px;
   height: 50px;
-  /* transition:  1s ease all; */
   overflow: hidden;
+  /* transition:  1s ease all; */
 }
 
 .ticket-detail-sub-title {
@@ -262,8 +262,4 @@ body {
 
 #view-tickets-button:hover {
   background-color: #005bb5;
-}
-
-.show-dialog{
-  height: 100%;
 }

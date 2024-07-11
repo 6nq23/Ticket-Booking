@@ -11,10 +11,22 @@
 .show {
   display: flex;
 }
-.open-dialog-from-left{
+.open-dialog-from-left {
   left: 0px;
 }
 
-.close-dialog-in-right{
+.close-dialog-in-right {
   left: 100%;
+}
+
+.open-wrapper {
+  height: 100%;
+}
+
+.arrow-up {
+  transform: rotate(180deg);
+}
+
+.arrow-down {
+  transform: rotate(0deg);
 }
