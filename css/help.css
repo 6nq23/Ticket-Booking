@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-size: 14px;
+}
+
+.help-container {
+  margin: 0 6px 0 12px;
+}
+
+.help-header {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 12px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.logo span {
+  margin-top: 7px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.help-main-heading {
+  margin-bottom: 25px;
+}
+
+.tickets-details > p {
+  font-size: var(--small-text-font-size);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.multi-ticket {
+  display: flex;
+  padding-top: 20px;
+}
+
+.sitilink-logo {
+  height: 42px;
+  width: 42px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  background-image: url("./../images/sitilink-logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-left: 42px;
+}
+
+.tc-about {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tc-description{
+  padding-right: 30px;
+}
+
+.tns-prise{
+  padding: 0 10px;
+}
+
+.tc-about > span {
+  font-weight: 500;
+  font-size: var(--medium-text-font-size);
+}
+
+.ticket-time{
+  color: var(--disable-color);
+}
+
+.tc-2 {
+  padding-top: 8px;
+  font-size: var(--font-size);
+}
+
+#Success {
+  color: #25b87bff;
+}
+
+.ticket-info{
+  margin-left: 12px ;
+  padding-bottom: 20px;
+  padding-right: 12px;
+  border-bottom: 0.5px solid var(--border-color);
+  /* box-shadow: -0.5px 0.5px 0 0 var(--border-color); */
+}
+
+.view-all-tns-btn {
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2px 20px;
+  font-size: var(--font-size);
+  margin-top: 25px;
+}
+
+.help-page-footer-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.grey-line {
+  height: 10px;
+  background-color: #ffe4e4;
+}
+
+.help-page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15px ;
+  gap: 12px;
+}
+
+.msg-icon {
+  height: 25px;
+  width: 25px;
+  background-image: url("./../images/help-comment.svg");
+  background-size: cover;
+}
+
+.msg {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 18px 0 6px;
+  font-size: var(--font-size);
+  font-weight: bold;
+}
+
+/* .right-icon{
+  font-size: 30px;
+} */
+
+.help-page-footer-container:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  height: 7px; /* Adjust the height of the blue border */
+  background-color: #00c5c5;
+}
+.help-page-footer-container:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px; /* Adjust to position below the blue border */
+  height: 8px; /* Adjust the height of the aqua border */
+  background-color: #00006b;
+}
