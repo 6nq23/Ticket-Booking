@@ -28,3 +28,11 @@ function setSelectedStop(from, to) {
   toStopInput.focus();
   toStopInput.value = to;
 }
+
+function openTicketViewPage(){
+  window.location = "https://paytm-ticket-booking.vercel.app/ticketView.html";
+}
+
+function openPaymentGatwayPage(){
+  window.location = "https://paytm-ticket-booking.vercel.app/paymentGatway.html";
+}
