@@ -93,6 +93,7 @@
   border-top: 1px solid #ddd;
   position: relative;
   font-size: 14px;
+  padding-left: 10px;
 }
 
 .ticket-footer::after{
@@ -124,7 +125,7 @@
   background-color: #fff;
 }
 
-.ticket-footer .material-icons {
+.ticket-footer .shedule-icon {
   color: #ff9800;
   margin-right: 8px;
 }
