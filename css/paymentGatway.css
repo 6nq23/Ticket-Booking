@@ -1,0 +1,324 @@
+.payment-gatway-wrapper{
+    padding: 0 15px;
+}
+
+.pay-container {
+    display: flex;
+    /* margin-top: -6px; */
+    height: 60px;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    background-color: rgb(249, 250, 250);
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+}
+
+.pay-container .material-symbols-outlined {
+    margin-top: 5px;
+}
+
+.head-surat {
+    font-size: 13px;
+    margin: 0;
+}
+
+.payment-gatway-header-container{
+    /* display: flex; */
+    /* padding: 10px; */
+    /* margin-left: 10px; */
+
+}
+
+.pay-container h3 {
+    font-size: 16px;
+    /* margin: 10px 0 ; */
+    margin: 5px 0 0;
+
+}
+
+.upi-option {
+    display: grid;
+    border: 1px solid rgb(243, 240, 240);
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 3.5%;
+}
+
+.upi {
+    margin: 6px 0 0 12px;
+}
+
+.upi-option h4 {
+    font-size: 15px;
+    margin: -9% 0 0 20%;
+}
+
+.bank-check {
+    display: block;
+    border: 1px solid rgb(242, 252, 252);
+    border-radius: 5px;
+    height: 53px;
+    width: 98%;
+    margin: 0 0 -5px 1%;
+    background-color: rgb(249, 250, 250);
+}
+
+.bob {
+    margin: 4% 0 0 5%;
+    height: 17px;
+    background-color: white;
+}
+
+.upi-option-bank {
+    font-size: 14px;
+    margin: -8% 0 0 16%;
+    opacity: 90%;
+    letter-spacing: 1px;
+}
+
+.upi-option-check {
+    display: block;
+    font-size: 13px;
+    margin: 3px 0 0 16%;
+    color: rgb(82, 194, 246);
+    letter-spacing: 0.3px;
+}
+
+.bank-check .material-symbols-outlined {
+    font-size: 18px;
+    border-radius: 50%;
+    color: white;
+    background-color: rgb(31, 234, 115);
+    display: block;
+    margin: -16px 3% 0 91%;
+}
+
+p.material-symbols-outlined {
+    display: block;
+    color: rgb(82, 194, 246);
+    font-size: 29px;
+    margin: 4% 0 5% 4.5%;
+}
+
+.upi-option-add-bank {
+    color: rgb(82, 194, 246);
+    margin: -11.4% 0 0 17%;
+    font-size: 14px;
+}
+
+.more-option {
+    margin: 10px 0 0 0;
+    display: grid;
+    border: 1px solid rgb(243, 240, 240);
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.more-option h4 {
+    font-size: 16px;
+    margin: 4% 0 0 5%;
+    font-weight: 600;
+    /* opacity: 85%; */
+}
+
+.credit {
+    margin: 15px 0 0 18px;
+}
+
+.p1 {
+    margin: -5.5% 0 0 16.5%;
+    font-size: 14px;
+    /* opacity: 75%; */
+}
+
+.master {
+    margin: 0 0 0 15.5%;
+}
+
+.rupay {
+    margin: -4.3% 0 0 24%;
+    display: block;
+}
+
+.visa {
+    display: block;
+    margin: -3.5% 0 0 31.5%;
+}
+
+.sub-s {
+    display: block;
+    margin: -4.5% 0 0 40%;
+    font-size: 14px;
+    opacity: 75%;
+}
+
+.s1 .material-symbols-outlined {
+    display: block;
+    margin: -8% 0 0 91.5%;
+    font-size: 17px;
+}
+
+.line1 {
+    border-top: 1px solid rgb(243, 240, 240);
+    margin: 7% 0 0 17%;
+}
+
+.upi {
+    margin: 11px 0 0 15px;
+}
+
+.p2 {
+    margin: -5.5% 0 0 16.5%;
+    font-size: 14px;
+}
+
+.paytm {
+    display: block;
+    margin: -1% 0 0 16.7%;
+}
+
+.phone-pay {
+    margin: -4.5% 0 0 23.5%;
+    display: block;
+}
+
+.google-pay {
+    display: block;
+    margin: -4.3% 0 0 32.5%;
+}
+
+.s2 .material-symbols-outlined {
+    display: block;
+    margin: -6.5% 0 0 91.5%;
+    font-size: 17px;
+}
+
+.line2 {
+    border-top: 1px solid rgb(243, 240, 240);
+    margin: 5% 0 0 17%;
+}
+
+.net-bank {
+    margin: 15px 0 0 15px;
+}
+
+.p3 {
+    margin: -6% 0 0 16.5%;
+    font-size: 14px;
+}
+
+.sub-s3 {
+    display: block;
+    margin: -1% 0 4.5% 16.3%;
+    font-size: 13.5px;
+}
+
+.s3 .material-symbols-outlined {
+    display: block;
+    margin: -11% 0 0 91.5%;
+    font-size: 17px;
+}
+
+.disable-option {
+    margin: 14px 0 0 0;
+    display: grid;
+    border: 1px solid rgb(243, 240, 240);
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.disable-option h4 {
+    font-size: 15px;
+    margin: 5% 0 0 5%;
+    opacity: 85%;
+}
+
+.wallet {
+    margin: 21px 0 0 10px;
+    opacity: 45%;
+
+}
+
+.w {
+    margin: -12% 0 0 16.5%;
+    font-size: 14px;
+    opacity: 45%;
+}
+
+.sub-w {
+    margin: -6.1% 0 4.5% 16.5%;
+    font-size: 14px;
+    color: rgb(247, 201, 115);
+    opacity: 75%;
+}
+
+.disable-option .material-symbols-outlined {
+    display: block;
+    margin: -20.2% 0 0 90%;
+    font-size: 18px;
+    opacity: 15%;
+}
+
+.icons {
+    display: flex;
+    margin-top: -5px;
+}
+
+.icons .norton {
+    margin: 10% 0 0 8%;
+}
+
+.icons .pci-dss {
+    margin: 9% 0 0 5%;
+}
+
+.icons .Paytm-Seal {
+    margin: 15px 0 0 7px;
+}
+
+.icons .rupay {
+    margin: 11% 0 0 -1px;
+}
+
+.icons .mastercard {
+    margin: 36px 0 0 3px;
+}
+
+.icons .visa {
+    margin: 30px 0 0 5px;
+}
+
+.payment-gatway-footer {
+    border: 4px solid rgb(248, 247, 247);
+    background-color: white;
+    position: fixed;
+    width: 99.5%;
+    bottom: 0;
+    left: 0;
+    padding-top: 5px;
+    box-shadow: -9px -6px 10px -5px var(--border-color);
+}
+
+.pay-secure {
+    display: grid;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 7px;
+    background-color: rgb(58, 155, 240);
+    width: 98%;
+    height: 48px;
+}
+
+.secure {
+    margin: 15px 0 0 113px;
+}
+
+.footer-pay-secure {
+    margin: -22px 0 0 136px;
+    color: white;
+    word-spacing: 1px;
+    font-size: 14px;
+}
+
+.para{
+    color: white;
+}

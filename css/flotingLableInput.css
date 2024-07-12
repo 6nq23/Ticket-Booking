@@ -15,7 +15,6 @@
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  font-weight: bold;
 }
 
 .floating-label {
@@ -35,7 +34,7 @@
 .passenger-input.not-empty ~ .floating-label {
   top: -10px;
   left: 10px;
-  font-size: 12px;
+  font-size: 14px;
   border-radius: 5px;
 }
 

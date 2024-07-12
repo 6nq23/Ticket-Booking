@@ -46,12 +46,12 @@ txnDetailsWrapper.addEventListener("click", () => {
 });
 
 function openDialog() {
-  txnDetailsWrapper.classList.add("open-wrapper");
+  txnDetailsWrapper.classList.remove("open-wrapper");
   downArrow.classList.add("arrow-up");
   downArrow.classList.remove("arrow-down");
 }
 function closeDialog() {
-  txnDetailsWrapper.classList.remove("open-wrapper");
+  txnDetailsWrapper.classList.add("open-wrapper");
   downArrow.classList.remove("arrow-up");
   downArrow.classList.add("arrow-down");
 }

@@ -64,24 +64,24 @@ paymentwrapper.addEventListener("click", () => {
 
 function openDialog(name) {
   if (name == "trip") {
-    tripDetailwrapper.classList.add("open-wrapper");
+    tripDetailwrapper.classList.remove("open-wrapper");
     downArrow1.classList.add("arrow-up");
     downArrow1.classList.remove("arrow-down");
   }
   if (name == "payment") {
-    paymentwrapper.classList.add("open-wrapper");
+    paymentwrapper.classList.remove("open-wrapper");
     downArrow2.classList.add("arrow-up");
     downArrow2.classList.remove("arrow-down");
   }
 }
 function closeDialog(name) {
   if (name == "trip") {
-    tripDetailwrapper.classList.remove("open-wrapper");
+    tripDetailwrapper.classList.add("open-wrapper");
     downArrow1.classList.remove("arrow-up");
     downArrow1.classList.add("arrow-down");
   }
   if (name == "payment") {
-    paymentwrapper.classList.remove("open-wrapper");
+    paymentwrapper.classList.add("open-wrapper");
     downArrow2.classList.remove("arrow-up");
     downArrow2.classList.add("arrow-down");
   }
