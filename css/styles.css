@@ -24,7 +24,6 @@ body {
 .sub-heading {
   font-size: var(--sub-heading-font-size);
   margin: 0;
-  padding-top: 5px;
   padding-bottom: 30px;
 }
 
@@ -35,7 +34,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0;
+  padding-top: 10px;
 }
 .header h1 {
   font-size: var(--main-heading-font-size);
@@ -59,7 +58,7 @@ body {
   align-items: center;
 }
 .recent-orders {
-  margin: 20px 0;
+  margin-top: 35px;
 }
 .recent-order-heading-container {
   display: flex;
@@ -72,6 +71,10 @@ body {
 }
 .recent-order-heading {
   padding-top: 0px;
+}
+.active-ticket-wrapper{
+  margin-top: 35px;
+  display: none;
 }
 .order-item {
   display: flex;
@@ -96,7 +99,8 @@ body {
   box-shadow: 0px 0px 1.5px var(--border-color);
 }
 .buy-ticket {
-  margin: 20px 0;
+  margin-top: 35px;
+  margin-bottom: 20px;
 }
 .buy-ticket label {
   display: block;
@@ -122,6 +126,7 @@ body {
   width: 100%;
   height: 36px;
   text-align: center;
+  font-size: var(--medium-text-font-size);
 }
 .past-ticket {
   display: flex;
@@ -192,4 +197,12 @@ body {
 }
 .footer > p {
   margin: 0px;
+}
+
+
+
+.disable-btn{
+  background-color: var(--border-color);
+  cursor: not-allowed;
+  color: var(--disable-color);
 }

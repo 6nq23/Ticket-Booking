@@ -18,6 +18,7 @@ function closePassengerDialog1() {
 const childPassenger = document.querySelector(".child-passenger");
 const adultPassenger = document.querySelector(".adult-passenger");
 
+var totalTickets
 let value1 = 0;
 let value2 = 1;
 const maxValue = 5;
@@ -91,6 +92,7 @@ function updateOutputs() {
 
 // SAVING THE PASSENGER DETAIL
 function savePassengerDetail() {
+  totalTickets = 0;
   let result = "";
   if (value1 == 1) {
     result += `${value1} child`;
@@ -102,10 +104,12 @@ function savePassengerDetail() {
     result += `, `;
   }
   if (value2 > 0) {
-    result += `${value2} ${value2==1?'Adult':'Adults'}`;
+    result += `${value2} ${value2 == 1 ? "Adult" : "Adults"}`;
   }
 
   passengerInput.value = result;
+  totalTickets = value1 + value2;
+  localStorage.setItem('totalTickets',totalTickets)
   closePassengerDialog1();
   return ``;
 }

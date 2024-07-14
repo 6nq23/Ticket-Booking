@@ -10,11 +10,15 @@
   align-items: center;
   margin: 10px 5px;
 }
-.back{
+.back {
   margin-left: 6px;
 }
 .ticket-img {
   margin-left: 20px;
+  background-color: rgb(210, 234, 243);
+  display: inline-block;
+  padding: 10px 8px 7px 9px;
+  border-radius: 50%;
 }
 
 .ticket-name {
@@ -60,7 +64,7 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-.timer{
+.timer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,10 +82,10 @@ h2 {
   justify-content: center;
   padding-left: 12px;
 }
-.label{
+.label {
   font-size: 12px;
 }
-.tc-details{
+.tc-details {
   margin: 18px 15px;
   padding: 5px 14px;
   border-radius: 5px;
@@ -92,21 +96,21 @@ h2 {
   overflow: hidden;
   /* transition:  1s ease all; */
 }
-.first-row{
+.first-row {
   display: flex;
   justify-content: space-between;
   padding: 12px 0;
 }
-.row{
+.row {
   display: flex;
   justify-content: space-between;
   padding: 12px 0;
   font-size: var(--small-text-font-size);
   color: rgb(39, 37, 37);
 }
-.ticket-buy-date{
+.ticket-buy-date {
   font-size: 14px;
 }
-hr{
+hr {
   opacity: 0.2;
 }
