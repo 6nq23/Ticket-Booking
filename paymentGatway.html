@@ -15,6 +15,15 @@
 </head>
 
 <body>
+    <div class="loader-container">
+        <div class="loading">
+          <div class="dot light-blue"></div>
+          <div class="dot light-blue"></div>
+          <div class="dot light-blue"></div>
+          <div class="dot aqua"></div>
+          <div class="dot aqua"></div>
+        </div>
+      </div>
     <div class="pay-container">
         <span class="material-symbols-outlined" onclick="back()"> arrow_back </span>
         <div class="payment-gatway-header-container">
@@ -110,7 +119,7 @@
             <div class="pay-secure" onclick="openTicketViewPage(true)">
                 <image src="./images/secure-payment.png" class="secure" height="16.5px" width="13.5px">
                 </image>
-                <p class="footer-pay-secure">Pay Securely <span> &#8377;4 </span></p>
+                <p class="footer-pay-secure">Pay Securely <span> &#8377;<span id="pay-securly-rate">4</span> </span></p>
             </div>
         </div>
 
@@ -121,6 +130,7 @@
         </div>
     </div>
 
+    <script src="./script//paymentGatway.js"></script>
     <script src="./script/script.js"></script>
 </body>
 

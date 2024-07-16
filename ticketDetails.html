@@ -14,6 +14,15 @@
 </head>
 
 <body>
+  <div class="loader-container">
+    <div class="loading">
+      <div class="dot light-blue"></div>
+      <div class="dot light-blue"></div>
+      <div class="dot light-blue"></div>
+      <div class="dot aqua"></div>
+      <div class="dot aqua"></div>
+    </div>
+  </div>
   <div class="title">
     <div class="back">
       <img src="images/back.png" onclick="back()" alt="">
@@ -21,7 +30,7 @@
     <div class="ticket-img">
       <image src="./images/qrCode-icon.jpg" height="15px" width="23px"></image>
     </div>
-    <div class="ticket-name">1 QR Ticket</div>
+    <div class="ticket-name"><span id="active-ticket-count-1">1</span> QR Ticket</div>
     <div class="help">
       <p>Help</p>
     </div>
@@ -29,13 +38,13 @@
   <div class="qr-content">
     <div class="from-to">
       <div class="item">
-        <h2>Anuvrat Dwar</h2>
+        <h2 id="from-location">Anuvrat Dwar</h2>
       </div>
       <span class="material-symbols-outlined" style="color: #656565;">
         arrow_forward
       </span>
       <div class="item">
-        <h2>Someshwar Junction</h2>
+        <h2 id="to-location">Someshwar Junction</h2>
       </div>
     </div>
     <div>
@@ -68,12 +77,12 @@
     </div>
     <div class="row">
       <p>Issued On</p>
-      <p class="ticket-buy-date">04 Jul 2024, 07:43 AM</p>
+      <p class="ticket-buy-date" id="booking-time">04 Jul 2024, 07:43 AM</p>
     </div>
     <hr>
     <div class="row">
       <p>Order ID</p>
-      <p>23759600084</p>
+      <p id="order-id">23759600084</p>
     </div>
     <hr>
     <div class="row">
@@ -83,7 +92,7 @@
     <hr>
     <div class="row">
       <p>Ticket Type</p>
-      <p>1 Adult</p>
+      <p><span id="active-ticket-count-2">1</span> Adult</p>
     </div>
   </div>
 

@@ -15,8 +15,17 @@
 
 <body>
   <div class="confirmation-container">
+    <div class="loader-container">
+      <div class="loading">
+        <div class="dot light-blue"></div>
+        <div class="dot light-blue"></div>
+        <div class="dot light-blue"></div>
+        <div class="dot aqua"></div>
+        <div class="dot aqua"></div>
+      </div>
+    </div>
     <div class="header">
-      <span class="material-symbols-outlined" onclick="back()"> arrow_back </span>
+      <span class="material-symbols-outlined" onclick="backToHome()"> arrow_back </span>
       <img src="./images/logo.png" alt="Paytm" id="paytm-logo">
       <span id="help-link" class="help-btn">Help</span>
     </div>
@@ -32,13 +41,13 @@
         <div class="to-location" id="to-location">Someshwar Junction</div>
       </div>
       <div class="ticket-info">
-        <span id="ticket-type">1 Adult Ticket</span>
+        <span id="ticket-type"><span id="active-ticket-count-1">1</span> Adult Ticket</span>
         <div class="boy-icon-container">
           <img src="./images/boy.png" class="boy-image" alt="boy image">
-          <h2 class="ticket-count-in-confirmation-dialog">1</h2>
+          <h2 class="ticket-count-in-confirmation-dialog" id="active-ticket-count-2">1</h2>
         </div>
         <div class="ticket-verified-price">
-          <span id="ticket-price">₹4</span>
+          <span id="ticket-price" style="letter-spacing: -3px;">₹4</span>
           <img src="./images/verified.svg" alt="">
         </div>
         <div id="success-message">TICKET BOOKED SUCCESSFULLY</div>
@@ -71,8 +80,10 @@
         <p class="operator-name-labe ticket-detail-sub-title"> OPERATOR </p>
         <h4 class="operator-name-value"> Surat Sitilink </h4>
         <p style="border-bottom: 1px dotted #b9b4c0; margin-left: 10px;"> </p>
-        <h4 class="order-id"> Order ID: 23769600084 <span style="color: #00acf1;"> copy </span></h4>
-        <p class="inquairy-info-text"> For any queries regarding QR Ticket, please contact <br> Surat Sitilink with Order Id.</p>
+        <h4 class="order-id"> Order ID: <span id="order-id">23769600084</span> <span style="color: #00acf1;"> copy
+          </span></h4>
+        <p class="inquairy-info-text"> For any queries regarding QR Ticket, please contact <br> Surat Sitilink with
+          Order Id.</p>
       </div>
 
       <div class="payment-wrapper open-wrapper">
@@ -84,12 +95,15 @@
         </div>
 
         <p class="ticket-detail-sub-title"> FARE BREAKUP </p>
-        <h4> 1 X Adult <span style="position: absolute; right: 25px;"> &#8377;4 </span> </h4>
+        <h4> <span id="total-tocket-count">1</span> X Adult <span style="position: absolute; right: 25px;"> &#8377;<span
+              id="ticket-price-detail">4</span> </span> </h4>
         <p style="border-bottom: 0.5px solid #b9b4c0;  margin-left: 10px;"> </p>
-        <h4> Total <span style="position: absolute; right: 26px;"> &#8377;4 </span> </h4>
+        <h4> Total <span style="position: absolute; right: 26px;"> &#8377;<span id="total-ticket-price">4</span> </span>
+        </h4>
         <p style="border-bottom: 1px dotted #b9b4c0;  margin-left: 10px;"> </p>
         <p class="ticket-detail-sub-title"> PAYMENT MODE </p>
-        <h4> UPI Linked Bank Account <span style="position: absolute; right: 26px;"> &#8377;4 </span> </h4>
+        <h4> UPI Linked Bank Account <span style="position: absolute; right: 26px;"> &#8377;<span
+              id="total-upi-payment">4</span> </span> </h4>
         <h5 style="opacity: 75%; margin-bottom: 10px;"> Transaction ID: 4552004139545 </h5>
       </div>
     </div>

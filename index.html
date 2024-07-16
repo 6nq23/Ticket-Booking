@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="./css/buyingSteps.css">
   <link rel="stylesheet" href="./css/stopSelection.css">
   <link rel="stylesheet" href="./css/ticket.css">
+  <link rel="stylesheet" href="./css/loader.css">
   <link rel="stylesheet" href="./css/commonStyles.css">
   <style>
     .plus-icon,
@@ -57,6 +58,15 @@
 
 <body>
   <div class="container">
+    <div class="loader-container">
+      <div class="loading">
+        <div class="dot light-blue"></div>
+        <div class="dot light-blue"></div>
+        <div class="dot light-blue"></div>
+        <div class="dot aqua"></div>
+        <div class="dot aqua"></div>
+      </div>
+    </div>
     <div class="header">
       <div class="arrow-and-heading-wrapper">
         <span class="material-symbols-outlined"> arrow_back </span>
@@ -68,13 +78,14 @@
         </div>
       </div>
       <a href="https://paytm-ticket-booking.vercel.app/help.html" class="help-btn">Help</a>
+      <!-- <a href="http://127.0.0.1:5500/help.html" class="help-btn">Help</a> -->
     </div>
 
     <div class="active-ticket-wrapper">
       <h2 class="sub-heading active-ticket-heading">Your Active Ticket</h2>
       <div class="ticket">
         <div class="ticket-header">
-          <span>1 Adult Ticket</span>
+          <span><span id="active-ticket-count">1</span> Adult Ticket</span>
         </div>
         <div class="ticket-content">
           <div class="ticket-stop-wrappper">
@@ -82,13 +93,13 @@
               <div class="radion-icon">
                 <div class="radio-dot"></div>
               </div>
-              <span class="stop-name">Magob Parvat Khadi Bridge</span>
+              <span class="stop-name" id="active-ticket-starting-stop">Magob Parvat Khadi Bridge</span>
             </div>
             <div class="stop">
               <div class="radion-icon">
                 <div class="radio-dot"></div>
               </div>
-              <span class="stop-name">Jai Jogani Mata Chowk Brts surat</span>
+              <span class="stop-name" id="active-ticket-ending-stop">Jai Jogani Mata Chowk Brts surat</span>
             </div>
           </div>
           <div class="qr-code" onclick="openTicketViewPage()">
@@ -105,7 +116,7 @@
           <span class="material-symbols-outlined shedule-icon">
             schedule
           </span>
-          <span>Ticket will expire at <b>02:31 PM, 12 Jul 2024</b></span>
+          <span>Ticket will expire at <b id="active-ticket-expiration-time">02:31 PM, 12 Jul 2024</b></span>
         </div>
       </div>
     </div>
@@ -167,8 +178,11 @@
             <div class="balance-value">Balance is Low (₹0)</div>
           </div>
         </div>
-        <button class="buy-button disable-btn" onclick="openPaymentGatwayPage()" disabled>Buy Ticket for ₹20
-          ₹16</button>
+        <button class="buy-button disable-btn" onclick="openPaymentGatwayPage()" disabled>Buy Ticket <span
+            id="rate-in-button">for <del id="before-discount-rate">₹20</del> ₹<span id="after-discount-rate">16</span>
+            <div class="disount-text">20% discount only on Paytm</div>
+          </span>
+        </button>
         <div class="footer">
           <span class="material-symbols-outlined" style="font-size: 15px;">
             info
@@ -283,6 +297,7 @@
     <div class="stop-names">
 
     </div>
+
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/dayjs.min.js"></script>

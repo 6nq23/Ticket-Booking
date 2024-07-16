@@ -8,7 +8,7 @@ const stops = [
     popular: true,
   },
   {
-    name: "D.G.V.C.L Urja sadan",
+    name: "D.G.V.C.L Urja Sadan Brts",
     popular: false,
   },
   {
@@ -16,15 +16,15 @@ const stops = [
     popular: false,
   },
   {
-    name: "utran power house",
+    name: "Utran Power House",
     popular: false,
   },
   {
-    name: "Jai Jogani mata chock",
+    name: "Jai Jogani Mata Chowk Brts",
     popular: false,
   },
   {
-    name: "utran R.O.B Bridge",
+    name: "Utran R.O.B Bridge Brts",
     popular: false,
   },
   {
@@ -32,7 +32,19 @@ const stops = [
     popular: true,
   },
   {
-    name: "VNSG convention hall",
+    name: "VNSG Convention Hall Brts",
+    popular: false,
+  },
+  {
+    name: "VNSG University Brts",
+    popular: false,
+  },
+  {
+    name: "Model Town Dumbhal",
+    popular: false,
+  },
+  {
+    name: "Model Town Junction Brts",
     popular: false,
   },
   {
@@ -56,7 +68,59 @@ const stops = [
     popular: false,
   },
   {
-    name: "Althan parvat Khadi Bridge",
+    name: "Althan Khadi Brts",
+    popular: false,
+  },
+  {
+    name: "Althan Depot Terminal",
+    popular: false,
+  },
+  {
+    name: "Magob parvat Khadi Bridge Brts",
+    popular: false,
+  },
+  {
+    name: "Magob Gam Brts",
+    popular: false,
+  },
+  {
+    name: "Amazia Amusement Park Brts",
+    popular: false,
+  },
+  {
+    name: "Sitanagar Brts",
+    popular: false,
+  },
+  {
+    name: "Bharthana Brts",
+    popular: false,
+  },
+  {
+    name: "Althan Bharthana Brts",
+    popular: false,
+  },
+  {
+    name: "Anuvrat Dwar Junction (East) Brts",
+    popular: false,
+  },
+  {
+    name: "Anuvrat Dwar Junction (West) Brts",
+    popular: false,
+  },
+  {
+    name: "Kharwarnagar Brts",
+    popular: false,
+  },
+  {
+    name: "Rupali Junction Brts",
+    popular: false,
+  },
+  {
+    name: "Unique hospital Junction Brts",
+    popular: false,
+  },
+  {
+    name: "Aaspas Dada Temple Brts",
     popular: false,
   },
 ];

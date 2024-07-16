@@ -110,6 +110,8 @@ function savePassengerDetail() {
   passengerInput.value = result;
   totalTickets = value1 + value2;
   localStorage.setItem('totalTickets',totalTickets)
+  rateBeforeDiscount.innerText = '₹'+(localStorage.getItem('prise')*localStorage.getItem('totalTickets')+2)
+  rateAfterDiscount.innerText = localStorage.getItem('prise')*localStorage.getItem('totalTickets')
   closePassengerDialog1();
   return ``;
 }

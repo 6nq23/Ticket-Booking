@@ -1,40 +1,8 @@
 function openTicketDetailPage() {
   window.location =
-    "https://paytm-ticket-booking.vercel.app/ticketDetails.html";
-    // "https://paytm-ticket-booking.vercel.app/ticketDetails.html";
+    // "http://127.0.0.1:5500/ticketDetails.html";
+  "https://paytm-ticket-booking.vercel.app/ticketDetails.html";
 }
-
-// TIMER COUNTDOWN USING DAYJS LIBERARY
-// dayjs.extend(window.dayjs_plugin_duration);
-
-// // Set the starting time to 2 hours
-// let duration = dayjs.duration({
-//   hours: 2,
-//   minutes: 0,
-//   seconds: 0,
-// });
-
-// // Update the timer every second
-// const timerInterval = setInterval(() => {
-//   // Reduce the duration by 1 second
-//   duration = duration.subtract(1, "second");
-
-//   // Format the remaining time
-//   const hours = String(duration.hours()).padStart(2, "0");
-//   const minutes = String(duration.minutes()).padStart(2, "0");
-//   const seconds = String(duration.seconds()).padStart(2, "0");
-
-//   // Display the remaining time in different spans
-//   document.getElementById("hours").innerText = hours;
-//   document.getElementById("minutes").innerText = minutes;
-//   document.getElementById("seconds").innerText = seconds;
-
-//   // Check if the countdown has reached zero
-//   if (duration.asSeconds() <= 0) {
-//     clearInterval(timerInterval);
-//     alert("Time is up!");
-//   }
-// }, 1000);
 
 const tripDetailwrapper = document.querySelector(".trip-detail-wrapper");
 const paymentwrapper = document.querySelector(".payment-wrapper");
@@ -87,3 +55,43 @@ function closeDialog(name) {
     downArrow2.classList.add("arrow-down");
   }
 }
+
+const activeTicketCount1 = document.getElementById("active-ticket-count-1");
+const activeTicketCount2 = document.getElementById("active-ticket-count-2");
+const activeStartingStop = document.getElementById("from-location");
+const activeEndingStop = document.getElementById("to-location");
+const ticketBookingTime = document.getElementById("booking-time");
+const orderIdWrapper = document.getElementById("order-id");
+const totalTicketCount = document.getElementById("total-tocket-count");
+const ticketPrise = document.getElementById("ticket-price");
+const totaTicketPrise = document.getElementById("total-ticket-price");
+const ticketPriseDetail = document.getElementById("ticket-price-detail");
+const totalUpiPayment = document.getElementById("total-upi-payment");
+
+function setActiveTicketDetails() {
+  const activeTicketDetails = JSON.parse(localStorage.getItem("ActiveTicket"));
+  const formattedTime = dayjs(activeTicketDetails.buyedAt).format("hh:mm A, DD MMM YYYY");
+  const orderId = generateOrderId()
+  activeTicketCount1.innerText = activeTicketDetails.numberOfTickets;
+  activeTicketCount2.innerText = activeTicketDetails.numberOfTickets;
+  totalTicketCount.innerText = activeTicketDetails.numberOfTickets;
+  activeStartingStop.innerText = activeTicketDetails.from;
+  activeEndingStop.innerText = activeTicketDetails.to;
+  ticketBookingTime.innerText = formattedTime;
+  orderIdWrapper.innerText = orderId;
+  totaTicketPrise.innerText = activeTicketDetails.numberOfTickets * activeTicketDetails.prise;
+  ticketPrise.innerText = activeTicketDetails.numberOfTickets * activeTicketDetails.prise;
+  ticketPriseDetail.innerText = activeTicketDetails.prise;
+  totalUpiPayment.innerText = activeTicketDetails.numberOfTickets * activeTicketDetails.prise;
+}
+
+function generateOrderId() {
+  const prefix = '23';
+  const remainingLength = 9; 
+  const randomPart = Math.floor(Math.random() * Math.pow(10, remainingLength)).toString().padStart(remainingLength, '0');
+  const randomNumber = prefix + randomPart;
+
+  return randomNumber;
+}
+
+window.onload = setActiveTicketDetails();
