@@ -59,6 +59,7 @@ body {
 }
 .recent-orders {
   margin-top: 35px;
+  display: none;
 }
 .recent-order-heading-container {
   display: flex;

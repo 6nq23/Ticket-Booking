@@ -1,0 +1,56 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/AllPastTicketViewPage.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="loader-container">
+      <div class="loading">
+        <div class="dot light-blue"></div>
+        <div class="dot light-blue"></div>
+        <div class="dot light-blue"></div>
+        <div class="dot aqua"></div>
+        <div class="dot aqua"></div>
+      </div>
+    </div>
+
+    <div class="stop-selection-header header">
+      <div class="arrow-and-heading-wrapper">
+        <span class="material-symbols-outlined back-from-stop-selection" onclick="back()"> arrow_back </span>
+        <h1>Recent Orders</h1>
+      </div>
+      <a href="#" class="help-btn" onclick="openHelpPage()">Help</a>
+    </div>
+
+    <div class="recent-orders">
+      <div style="color: gray; padding: 40px 10px; text-align: center;">There are Not Any order found</div>
+      <!-- All past orders append here -->
+      <template id="recent-order-item-template">
+        <div class="order-item">
+          <div class="past-ticket">
+            <div class="ticket-count"><span class="past-ticket-passenger">1</span> Adult Ticket</div>
+            <div class="past-ticket-content">
+              <div class="from-past">Jai Jogani Mata Chowk Brts</div>
+              <span class="material-symbols-outlined" style="font-size: 15px;">
+                east
+              </span>
+              <div class="to-past">Someshwar Junction Brts</div>
+            </div>
+          </div>
+          <button>Buy&nbsp;₹<span class="past-order-prise">4</span></button>
+        </div>
+      </template>
+    </div>
+  </div>
+</body>
+<script src="./script/script.js"></script>
+<script src="./script//resentOrder.js"></script>
+
+</html>

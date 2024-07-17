@@ -20,13 +20,15 @@ function checkTicketValidityOnLoad() {
     const remainingTime = getRemainingTime(ticket, validityPeriod);
 
     if (remainingTime > 0) {
-      console.log("Ticket is valid");
       // Perform actions for valid ticket
       startTimer(remainingTime);
     } else {
-      console.log("Ticket has expired");
+      alert("Ticket has expired");
       // Perform actions for expired ticket
-      localStorage.removeItem("ticket"); // Optionally remove expired ticket
+      localStorage.removeItem("ActiveTicket"); // Optionally remove expired ticket
+      window.location =
+      "https://paytm-ticket-booking.vercel.app";
+      // "http://127.0.0.1:5500";
     }
   } else {
     console.log("No ticket found in localStorage");

@@ -121,14 +121,31 @@
       </div>
     </div>
 
+    <template id="recent-order-item-template">
+      <div class="order-item">
+        <div class="past-ticket">
+          <div class="ticket-count"><span class="past-ticket-passenger">1</span> Adult Ticket</div>
+          <div class="past-ticket-content">
+            <div class="from-past">Jai Jogani Mata Chowk Brts</div>
+            <span class="material-symbols-outlined" style="font-size: 15px;">
+              east
+            </span>
+            <div class="to-past">Someshwar Junction Brts</div>
+          </div>
+        </div>
+        <button>Buy&nbsp;₹<span class="past-order-prise">4</span></button>
+      </div>
+    </template>
+
     <div class="recent-orders">
       <div class="recent-order-heading-container">
         <h2 class="sub-heading recent-order-heading">Recent Orders</h2>
-        <a href="#">View All</a>
+        <a href="https://paytm-ticket-booking.vercel.app/AllPastTicketViewPage.html">View All</a>
+        <!-- <a href="http://127.0.0.1:5500/AllPastTicketViewPage.html">View All</a> -->
       </div>
-      <div class="order-item">
+      <!-- <div class="order-item">
         <div class="past-ticket">
-          <div class="ticket-count">1 Adult Ticket</div>
+          <div class="ticket-count"><span id="past-ticket-passenger">1</span> Adult Ticket</div>
           <div class="past-ticket-content">
             <div class="from-past">Jai Jogani Mata Chowk Brts</div>
             <span class="material-symbols-outlined" style="font-size: 15px;">
@@ -138,20 +155,7 @@
           </div>
         </div>
         <button>Buy&nbsp;₹4</button>
-      </div>
-      <div class="order-item">
-        <div class="past-ticket">
-          <div class="ticket-count">1 Adult Ticket</div>
-          <div class="past-ticket-content">
-            <div class="from-past">D.G.V.C.L. Urja Nagar</div>
-            <span class="material-symbols-outlined" style="font-size: 15px;">
-              east
-            </span>
-            <div class="to-past">Jai Jogani Mata Chowk Brts</div>
-          </div>
-        </div>
-        <button>Buy&nbsp;₹4</button>
-      </div>
+      </div> -->
     </div>
     <div class="buy-ticket">
       <h2 class="sub-heading buy-new-ticket-heading">Buy New Ticket</h2>
@@ -283,7 +287,8 @@
         </span>
         <h1>Select a stop - Surat</h1>
       </div>
-      <a href="#" class="help-btn">Help</a>
+      <a href="https://paytm-ticket-booking.vercel.app/help.html" class="help-btn">Help</a>
+      <!-- <a href="http://127.0.0.1:5500/help.html" class="help-btn">Help</a> -->
     </div>
     <div class="input-container from-input-wrapper">
       <input type="text" class="text-input starting-stop-input" name="from" autocomplete="off" required />

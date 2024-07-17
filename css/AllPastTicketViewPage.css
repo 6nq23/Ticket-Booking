@@ -1,0 +1,12 @@
+.container {
+  padding: 15px;
+}
+.stop-selection-header {
+  font-size: var(--sub-heading-font-size);
+}
+.help-btn {
+  font-size: var(--medium-text-font-size);
+}
+.recent-orders {
+  display: block;
+}

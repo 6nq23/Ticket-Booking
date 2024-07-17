@@ -1,7 +1,7 @@
 function openTicketDetailPage() {
   window.location =
-    // "http://127.0.0.1:5500/ticketDetails.html";
   "https://paytm-ticket-booking.vercel.app/ticketDetails.html";
+  // "http://127.0.0.1:5500/ticketDetails.html";
 }
 
 const tripDetailwrapper = document.querySelector(".trip-detail-wrapper");

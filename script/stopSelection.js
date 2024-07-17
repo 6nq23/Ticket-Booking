@@ -68,6 +68,10 @@ const stops = [
     popular: false,
   },
   {
+    name: "Devadh Gam Road Brts",
+    popular: false,
+  },
+  {
     name: "Althan Khadi Brts",
     popular: false,
   },

@@ -9,8 +9,8 @@ const toStopInput = document.querySelector(".to-input");
 
 const buyTicketBtn = document.querySelector(".buy-button");
 const buyTicketBtnText = document.getElementById("rate-in-button");
-const rateBeforeDiscount = document.getElementById("before-discount-rate");
-const rateAfterDiscount = document.getElementById("after-discount-rate");
+var rateBeforeDiscount = document.getElementById("before-discount-rate");
+var rateAfterDiscount = document.getElementById("after-discount-rate");
 const loader = document.querySelector(".loader-container");
 
 window.addEventListener("DOMContentLoaded", async () => {
@@ -45,7 +45,12 @@ function back() {
 function backToHome() {
   window.location =
     "https://paytm-ticket-booking.vercel.app";
-  // window.location = "http://127.0.0.1:5500";
+    // window.location = "http://127.0.0.1:5500";
+}
+
+function openHelpPage(){
+  window.location = 'https://paytm-ticket-booking.vercel.app/help.html'
+  // window.location = 'http://127.0.0.1:5500/help.html'
 }
 
 function closeStopSelectionPage() {
@@ -62,14 +67,20 @@ function setSelectedStop(from, to) {
   buyTicketBtn.disabled = false;
   buyTicketBtn.classList.remove("disable-btn");
   buyTicketBtnText.style.display = "contents";
-  rateBeforeDiscount.innerText = '₹'+(localStorage.getItem('prise')*localStorage.getItem('totalTickets')+2)
-  rateAfterDiscount.innerText = localStorage.getItem('prise')*localStorage.getItem('totalTickets')
+  rateBeforeDiscount.innerText =
+    "₹" +
+    (localStorage.getItem("prise") * localStorage.getItem("totalTickets") + 2);
+  rateAfterDiscount.innerText =
+    localStorage.getItem("prise") * localStorage.getItem("totalTickets");
 }
 
 async function openTicketViewPage(payment = false) {
   if (payment == true) {
     const ticketDetail = JSON.parse(localStorage.getItem("tempTicketDetails"));
     ticketDetail.userId = userId;
+
+    ticketDetail.ticketPrise =
+      localStorage.getItem("prise") * localStorage.getItem("totalTickets");
 
     const response = await fetch(`https://ticket-booking-backend-gqin.onrender.com/api/v1/ticket/create`, {
     // const response = await fetch(`http://127.0.0.1:3000/api/v1/ticket/create`, {
@@ -85,15 +96,15 @@ async function openTicketViewPage(payment = false) {
     }
 
     const data = await response.json();
-    data.newTicket.prise = localStorage.getItem('prise');
+    data.newTicket.prise = localStorage.getItem("prise");
 
     if (data.status === "success") {
       localStorage.setItem("ActiveTicket", JSON.stringify(data.newTicket));
+      localStorage.removeItem("totalTickets");
       localStorage.removeItem("tempTicketDetails");
     }
 
     console.log("payment done");
-    console.log(data);
   }
 
   window.location = "https://paytm-ticket-booking.vercel.app/ticketView.html";
@@ -107,7 +118,6 @@ function openPaymentGatwayPage() {
 
   const tempTicketDetails = { from, to, numberOfTickets };
   localStorage.setItem("tempTicketDetails", JSON.stringify(tempTicketDetails));
-  localStorage.removeItem("totalTickets");
   window.location = "https://paytm-ticket-booking.vercel.app/paymentGatway.html";
   // window.location = "http://127.0.0.1:5500/paymentGatway.html";
 }

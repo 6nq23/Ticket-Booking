@@ -2,6 +2,10 @@
 const addPassengerDialog = document.getElementById("add-passenger");
 const passengerInput = document.querySelector(".passenger-input");
 
+var rateBeforeDiscount = document.getElementById("before-discount-rate");
+var rateAfterDiscount = document.getElementById("after-discount-rate");
+
+
 passengerInput.addEventListener("click", () => {
   document.getElementById("modal-backdrop-1").style.display = "block";
   addPassengerDialog.classList.add("open-dialog");
