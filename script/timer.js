@@ -23,7 +23,7 @@ function checkTicketValidityOnLoad() {
       // Perform actions for valid ticket
       startTimer(remainingTime);
     } else {
-      alert("Ticket has expired");
+      console.log("Ticket has expired");
       // Perform actions for expired ticket
       localStorage.removeItem("ActiveTicket"); // Optionally remove expired ticket
       window.location =
@@ -51,7 +51,7 @@ function startTimer(remainingTime) {
 
     if (duration.asSeconds() <= 0) {
       clearInterval(timerInterval);
-      alert("Time is up!");
+      console.log("Time is up!");
     }
   }, 1000);
 }

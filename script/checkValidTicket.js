@@ -47,7 +47,7 @@ function checkTicketValidityOnLoad() {
       setActiveTicketDetails();
       activeTicketWrapper.style.display = "block";
     } else {
-      alert("Ticket has expired");
+      console.log("Ticket has expired");
       localStorage.removeItem("ActiveTicket");
       activeTicketWrapper.style.display = "none";
       window.location =
