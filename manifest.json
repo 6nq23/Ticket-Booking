@@ -1,6 +1,6 @@
 {
   "name": "Paytm",
-  "short_name": "Paytm",
+  "short_name": "",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -17,20 +17,6 @@
       "src": "images/paytmBanner-512.png",
       "sizes": "512x512",
       "type": "image/png"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "images/desktop-screenshort.png",
-      "sizes": "1280x800",
-      "type": "image/png",
-      "form_factor": "wide"
-    },
-    {
-      "src": "images/mobile-screenshort.png",
-      "sizes": "640x1136",
-      "type": "image/png",
-      "form_factor": "narrow"
     }
   ]
 }

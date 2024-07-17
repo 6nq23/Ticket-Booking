@@ -6,7 +6,7 @@
   --sub-heading-font-size: 20px;
   --medium-text-font-size: 15px;
   --small-text-font-size: 13px;
-  --error-background-color: #FFEAEF;
+  --error-background-color: #ffeaef;
   --error-text-color: #f5a0a5;
   --error-icon-color: #fd525b;
   --padding: 10px;
@@ -19,6 +19,19 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
+}
+
+button:focus,
+a:focus,
+button:active,
+a:active {
+  outline: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .sub-heading {
@@ -73,7 +86,7 @@ body {
 .recent-order-heading {
   padding-top: 0px;
 }
-.active-ticket-wrapper{
+.active-ticket-wrapper {
   margin-top: 35px;
   display: none;
 }
@@ -129,11 +142,11 @@ body {
   text-align: center;
   font-size: var(--medium-text-font-size);
 }
-.disount-text{
+.disount-text {
   font-size: 10px;
   margin-top: 2px;
 }
-#rate-in-button{
+#rate-in-button {
   display: none;
 }
 .past-ticket {
@@ -207,15 +220,11 @@ body {
   margin: 0px;
 }
 
-
-
-.disable-btn{
+.disable-btn {
   background-color: var(--border-color);
   cursor: not-allowed;
   color: var(--disable-color);
 }
-
-
 
 /* loader css */
 .loader-container {
@@ -255,7 +264,7 @@ body {
 }
 
 .aqua {
-  background-color: #00FFFF;
+  background-color: #00ffff;
   /* Aqua color */
   width: 10px;
   /* Smaller size for aqua dots */
@@ -284,15 +293,14 @@ body {
 }
 
 @keyframes bounce {
-
   0%,
   100% {
-      transform: scale(0.5);
-      /* Dots are still visible but smaller */
+    transform: scale(0.5);
+    /* Dots are still visible but smaller */
   }
 
   50% {
-      transform: scale(1);
-      /* Dots grow to full size */
+    transform: scale(1);
+    /* Dots grow to full size */
   }
 }
