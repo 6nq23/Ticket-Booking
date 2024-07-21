@@ -20,6 +20,26 @@ const stops = [
     popular: false,
   },
   {
+    name: "Unn Char Rasta Brts",
+    popular: false,
+  },
+  {
+    name: "Sachin Railway Station",
+    popular: false,
+  },
+  {
+    name: "Sachin Gidc Junction",
+    popular: false,
+  },
+  {
+    name: "Navin Fluorine Brts",
+    popular: false,
+  },
+  {
+    name: "Dindoli Varigruh Brts",
+    popular: false,
+  },
+  {
     name: "Jai Jogani Mata Chowk Brts",
     popular: false,
   },
