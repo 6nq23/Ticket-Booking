@@ -17,13 +17,13 @@
 <body>
     <div class="loader-container">
         <div class="loading">
-          <div class="dot light-blue"></div>
-          <div class="dot light-blue"></div>
-          <div class="dot light-blue"></div>
-          <div class="dot aqua"></div>
-          <div class="dot aqua"></div>
+            <div class="dot light-blue"></div>
+            <div class="dot light-blue"></div>
+            <div class="dot light-blue"></div>
+            <div class="dot aqua"></div>
+            <div class="dot aqua"></div>
         </div>
-      </div>
+    </div>
     <div class="pay-container">
         <span class="material-symbols-outlined" onclick="back()"> arrow_back </span>
         <div class="payment-gatway-header-container">
@@ -116,11 +116,22 @@
         </div>
 
         <div class="payment-gatway-footer">
-            <div class="pay-secure" onclick="openTicketViewPage(true)">
-                <image src="./images/secure-payment.png" class="secure" height="16.5px" width="13.5px">
-                </image>
-                <p class="footer-pay-secure">Pay Securely <span> &#8377;<span id="pay-securly-rate">4</span> </span></p>
+            <div class="pay-secure-btn-and-loader-container">
+                <div class="pay-secure" onclick="openTicketViewPage(true)">
+                    <image src="./images/secure-payment.png" class="secure" height="16.5px" width="13.5px">
+                    </image>
+                    <p class="footer-pay-secure">Pay Securely <span> &#8377;<span id="pay-securly-rate">4</span> </span>
+                    </p>
+                </div>
+                <div class="loading" id="btn-loader">
+                    <div class="dot light-blue"></div>
+                    <div class="dot light-blue"></div>
+                    <div class="dot light-blue"></div>
+                    <div class="dot aqua"></div>
+                    <div class="dot aqua"></div>
+                </div>
             </div>
+
         </div>
 
         <div class="para">
