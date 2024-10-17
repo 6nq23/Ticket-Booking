@@ -20,6 +20,10 @@ const stops = [
     popular: false,
   },
   {
+    name: "Pandesara Brts",
+    popular: false,
+  },
+  {
     name: "Unn Char Rasta Brts",
     popular: false,
   },
