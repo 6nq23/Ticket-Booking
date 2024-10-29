@@ -151,6 +151,18 @@ const stops = [
     name: "Aaspas Dada Temple Brts",
     popular: false,
   },
+  {
+    name: "Kadodara",
+    popular: false,
+  },
+  {
+    name: "Saroli Brts",
+    popular: false,
+  },
+  {
+    name: "Sabar Gaam",
+    popular: false,
+  },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
