@@ -52,6 +52,10 @@ const stops = [
     popular: false,
   },
   {
+    name: "Shree Swami Dayanand Saraswati Bridge",
+    popular: false,
+  },
+  {
     name: "Linear Bus Stop",
     popular: true,
   },
