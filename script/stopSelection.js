@@ -171,6 +171,10 @@ const stops = [
     name: "Sarthana Nature Park Brts",
     popular: false,
   },
+  {
+    name: "S.M.V.S. Swaminarayan Temple Brts",
+    popular: false,
+  },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
