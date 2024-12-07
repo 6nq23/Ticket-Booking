@@ -167,6 +167,10 @@ const stops = [
     name: "Sabar Gaam",
     popular: false,
   },
+  {
+    name: "Sarthana Nature Park Brts",
+    popular: false,
+  },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
