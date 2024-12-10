@@ -175,6 +175,10 @@ const stops = [
     name: "S.M.V.S. Swaminarayan Temple Brts",
     popular: false,
   },
+  {
+    name: "Shantanu Residency Godadara",
+    popular: false,
+  },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
