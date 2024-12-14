@@ -20,6 +20,10 @@ const stops = [
     popular: false,
   },
   {
+    name: "Pandesara Brts",
+    popular: false,
+  },
+  {
     name: "Unn Char Rasta Brts",
     popular: false,
   },
@@ -45,6 +49,10 @@ const stops = [
   },
   {
     name: "Utran R.O.B Bridge Brts",
+    popular: false,
+  },
+  {
+    name: "Shree Swami Dayanand Saraswati Bridge",
     popular: false,
   },
   {
@@ -145,6 +153,30 @@ const stops = [
   },
   {
     name: "Aaspas Dada Temple Brts",
+    popular: false,
+  },
+  {
+    name: "Kadodara",
+    popular: false,
+  },
+  {
+    name: "Saroli Brts",
+    popular: false,
+  },
+  {
+    name: "Sabar Gaam",
+    popular: false,
+  },
+  {
+    name: "Sarthana Nature Park Brts",
+    popular: false,
+  },
+  {
+    name: "S.M.V.S. Swaminarayan Temple Brts",
+    popular: false,
+  },
+  {
+    name: "Shantanu Residency Godadara",
     popular: false,
   },
 ];
