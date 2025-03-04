@@ -179,6 +179,14 @@ const stops = [
     name: "Shantanu Residency Godadara",
     popular: false,
   },
+  {
+    name: "Gotalawadi",
+    popular: false,
+  },
+  {
+    name: "Palanpur Patiya Brts",
+    popular: false,
+  },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
