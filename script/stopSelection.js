@@ -187,6 +187,10 @@ const stops = [
     name: "Palanpur Patiya Brts",
     popular: false,
   },
+  {
+    name: "Tulsidham Brts",
+    popular: false,
+  },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
