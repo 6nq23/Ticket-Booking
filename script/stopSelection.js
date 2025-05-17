@@ -192,7 +192,7 @@ const stops = [
     popular: false,
   },
   {
-    name: "Athwa gate Brts",
+    name: "Athwagate",
     popular: false,
   },
 ];
