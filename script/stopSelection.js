@@ -191,6 +191,10 @@ const stops = [
     name: "Tulsidham Brts",
     popular: false,
   },
+  {
+    name: "Athwa gate Brts",
+    popular: false,
+  },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
