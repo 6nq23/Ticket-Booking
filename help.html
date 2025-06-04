@@ -106,5 +106,19 @@
     </div>
 
     <script src="./script/script.js"></script>
+    <script>
+      window.onload = function () {
+        const loader = document.querySelector(".loader-container");
+        if (loader) {
+          loader.style.display = "none";
+        }
+    
+        // Show your main content here if it's hidden
+        const mainContent = document.querySelector(".container"); // adjust selector
+        if (mainContent) {
+          mainContent.style.display = "block";
+        }
+      };
+    </script>
   </body>
 </html>

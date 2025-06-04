@@ -28,14 +28,16 @@ document.addEventListener("DOMContentLoaded", function() {
       // Arrow effect for passenger-input
       if (input.classList.contains("passenger-input")) {
           const container = input.closest(".input-container");
-          container.addEventListener("click", function() {
-              container.classList.toggle("open");
-              // Call a function or open a dialog here
-          });
+          if (container) {
+              container.addEventListener("click", function() {
+                  container.classList.toggle("open");
+                  // Call a function or open a dialog here
+              });
 
-          input.addEventListener("blur", function() {
-              container.classList.remove("open");
-          });
+              input.addEventListener("blur", function() {
+                  container.classList.remove("open");
+              });
+          }
       }
   });
 });

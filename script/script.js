@@ -1,43 +1,33 @@
 const userId = localStorage.getItem("userId");
 
-const stopSelectionDialog = document.querySelector(".stop-selection-dialog");
-const startingStopInput = document.querySelector(".starting-stop-input");
-const endingStopInput = document.querySelector(".ending-stop-input");
-
 const fromStopInput = document.querySelector(".from-input");
 const toStopInput = document.querySelector(".to-input");
 
 const buyTicketBtn = document.querySelector(".buy-button");
 const buyTicketBtnText = document.getElementById("rate-in-button");
-var rateBeforeDiscount = document.getElementById("before-discount-rate");
-var rateAfterDiscount = document.getElementById("after-discount-rate");
+const rateBeforeDiscount = document.getElementById("before-discount-rate");
+const rateAfterDiscount = document.getElementById("after-discount-rate");
 const loader = document.querySelector(".loader-container");
 
-window.addEventListener("DOMContentLoaded", async () => {
-  const response = await fetch(
-    `https://tickets-booking-backend-r2b4.onrender.com/api/v1/ticket/${userId}`
-  );
-  // const response = await fetch(`http://127.0.0.1:3000/api/v1/ticket/${userId}`);
-
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
+window.addEventListener("DOMContentLoaded", () => {
+  // Initialize tickets array if not already present
+  if (!localStorage.getItem("tickets")) {
+    localStorage.setItem("tickets", JSON.stringify([]));
   }
 
-  const data = await response.json();
+  // Retrieve selected stops from localStorage
+  const from = localStorage.getItem("selectedFromStop");
+  const to = localStorage.getItem("selectedToStop");
 
-  if (data.status === "success") {
-    localStorage.setItem("tickets", JSON.stringify(data.tickets));
+  if (from && to) {
+    setSelectedStop(from, to);
+    localStorage.removeItem("selectedFromStop");
+    localStorage.removeItem("selectedToStop");
   }
-
-  console.log(data);
 });
 
 function openStopSelectionPage() {
-  // window.location = "https://paytm-ticket-booking.vercel.app/stopSelection.html";
-  stopSelectionDialog.classList.add("open-dialog-from-left");
-  stopSelectionDialog.classList.remove("close-dialog-in-right");
-  endingStopInput.focus();
-  startingStopInput.focus();
+  window.location.href = "http://127.0.0.1:5500/Ticket-Booking/stopSelection.html";
 }
 
 function back() {
@@ -45,18 +35,11 @@ function back() {
 }
 
 function backToHome() {
-  window.location = "https://paytm-ticket-booking.vercel.app";
-  // window.location = "http://127.0.0.1:5500";
+  window.location.href = "http://127.0.0.1:5500";
 }
 
 function openHelpPage() {
-  window.location = "https://paytm-ticket-booking.vercel.app/help.html";
-  // window.location = 'http://127.0.0.1:5500/help.html'
-}
-
-function closeStopSelectionPage() {
-  stopSelectionDialog.classList.add("close-dialog-in-right");
-  stopSelectionDialog.classList.remove("open-dialog-from-left");
+  window.location.href = "http://127.0.0.1:5500/help.html";
 }
 
 function setSelectedStop(from, to) {
@@ -68,84 +51,69 @@ function setSelectedStop(from, to) {
   buyTicketBtn.disabled = false;
   buyTicketBtn.classList.remove("disable-btn");
   buyTicketBtnText.style.display = "contents";
-  rateBeforeDiscount.innerText =
-    "₹" +
-    (localStorage.getItem("prise") * localStorage.getItem("totalTickets") + 2);
-  rateAfterDiscount.innerText =
-    localStorage.getItem("prise") * localStorage.getItem("totalTickets");
+
+  const totalTickets = parseInt(localStorage.getItem("totalTickets")) || 1;
+  const price = parseInt(localStorage.getItem("prise")) || 0;
+
+  rateBeforeDiscount.innerText = "₹" + (price * totalTickets + 2);
+  rateAfterDiscount.innerText = price * totalTickets;
 }
 
 async function openTicketViewPage(payment = false) {
-  if (payment == true) {
+  if (payment === true) {
     const payBtn = document.querySelector(".pay-secure");
     const btnLoader = document.getElementById("btn-loader");
-    payBtn.style.display = "none"
-    btnLoader.style.display = "flex"
 
-    console.log(payBtn);
+    payBtn.style.display = "none";
+    btnLoader.style.display = "flex";
 
     const ticketDetail = JSON.parse(localStorage.getItem("tempTicketDetails"));
     ticketDetail.userId = userId;
+    ticketDetail.prise = parseInt(localStorage.getItem("prise")) || 0;
+    ticketDetail.ticketPrise = ticketDetail.prise * parseInt(localStorage.getItem("totalTickets"));
+    ticketDetail.buyedAt = Date.now();
+    ticketDetail.ticketId = `${Date.now()}_${Math.floor(Math.random() * 1e6)}`;
 
-    ticketDetail.ticketPrise =
-      localStorage.getItem("prise") * localStorage.getItem("totalTickets");
+    // Store as active ticket
+    localStorage.setItem("ActiveTicket", JSON.stringify(ticketDetail));
 
-    const response = await fetch(
-      `https://tickets-booking-backend-r2b4.onrender.com/api/v1/ticket/create`,
-      {
-        // const response = await fetch(`http://127.0.0.1:3000/api/v1/ticket/create`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(ticketDetail),
-      }
-    );
+    // Add to tickets history
+    let tickets = JSON.parse(localStorage.getItem("tickets")) || [];
+    tickets.push(ticketDetail);
+    localStorage.setItem("tickets", JSON.stringify(tickets));
 
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
+    // Cleanup temp data
+    localStorage.removeItem("totalTickets");
+    localStorage.removeItem("tempTicketDetails");
 
-    const data = await response.json();
-    data.newTicket.prise = localStorage.getItem("prise");
+    payBtn.style.display = "flex";
+    btnLoader.style.display = "none";
 
-    if (data.status === "success") {
-      localStorage.setItem("ActiveTicket", JSON.stringify(data.newTicket));
-      localStorage.removeItem("totalTickets");
-      localStorage.removeItem("tempTicketDetails");
-
-      payBtn.style.display = "flex"
-      btnLoader.style.display = "none"
-    }
-    
-    console.log("payment done");
+    console.log("Payment done (frontend simulated)");
   }
 
-  window.location = "https://paytm-ticket-booking.vercel.app/ticketView.html";
-  // window.location = "http://127.0.0.1:5500/ticketView.html";
+  window.location.href = "http://127.0.0.1:5500/Ticket-Booking/ticketView.html";
 }
 
 function openPaymentGatwayPage() {
   const from = fromStopInput.value;
   const to = toStopInput.value;
-  const numberOfTickets = localStorage.getItem("totalTickets");
+  const numberOfTickets = localStorage.getItem("totalTickets") || "1";
 
   const tempTicketDetails = { from, to, numberOfTickets };
   localStorage.setItem("tempTicketDetails", JSON.stringify(tempTicketDetails));
-  window.location =
-    "https://paytm-ticket-booking.vercel.app/paymentGatway.html";
-  // window.location = "http://127.0.0.1:5500/paymentGatway.html";
+
+  window.location.href = "http://127.0.0.1:5500/Ticket-Booking/paymentGatway.html";
 }
 
-// Loader showing
 function checkUserAuthentication() {
   const userId = localStorage.getItem("userId");
 
   if (userId) {
-    setInterval(() => {
+    setTimeout(() => {
       loader.style.display = "none";
     }, 1500);
   }
 }
 
-window.onload = checkUserAuthentication();
+window.onload = checkUserAuthentication;
