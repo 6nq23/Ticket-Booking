@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function openStopSelectionPage() {
-  window.location.href = "http://127.0.0.1:5500/Ticket-Booking/stopSelection.html";
+  window.location.href = "https://idyllic-druid-c0a009.netlify.app/stopSelection.html";
 }
 
 function back() {
@@ -35,11 +35,11 @@ function back() {
 }
 
 function backToHome() {
-  window.location.href = "http://127.0.0.1:5500";
+  window.location.href = "https://idyllic-druid-c0a009.netlify.app/";
 }
 
 function openHelpPage() {
-  window.location.href = "http://127.0.0.1:5500/help.html";
+  window.location.href = "https://idyllic-druid-c0a009.netlify.app/help.html";
 }
 
 function setSelectedStop(from, to) {
@@ -92,7 +92,7 @@ async function openTicketViewPage(payment = false) {
     console.log("Payment done (frontend simulated)");
   }
 
-  window.location.href = "http://127.0.0.1:5500/Ticket-Booking/ticketView.html";
+  window.location.href = "https://idyllic-druid-c0a009.netlify.app/ticketView.html";
 }
 
 function openPaymentGatwayPage() {
@@ -103,7 +103,7 @@ function openPaymentGatwayPage() {
   const tempTicketDetails = { from, to, numberOfTickets };
   localStorage.setItem("tempTicketDetails", JSON.stringify(tempTicketDetails));
 
-  window.location.href = "http://127.0.0.1:5500/Ticket-Booking/paymentGatway.html";
+  window.location.href = "https://idyllic-druid-c0a009.netlify.app/paymentGatway.html";
 }
 
 function checkUserAuthentication() {

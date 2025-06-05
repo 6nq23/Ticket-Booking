@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Perform actions for expired ticket
         localStorage.removeItem("ActiveTicket"); // Optionally remove expired ticket
         window.location =
-        "http://127.0.0.1:5500";
+        "https://idyllic-druid-c0a009.netlify.app/";
         // "http://127.0.0.1:5500";
       }
     } else {

@@ -1,6 +1,6 @@
 function openTicketDetailPage() {
   window.location =
-  "http://127.0.0.1:5500/Ticket-Booking/ticketDetails.html";
+  "https://idyllic-druid-c0a009.netlify.app/ticketDetails.html";
   // "http://127.0.0.1:5500/ticketDetails.html";
 }
 

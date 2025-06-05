@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Save to localStorage and go back to bookTicket.html
       localStorage.setItem("selectedFromStop", fromStopInput.value);
       localStorage.setItem("selectedToStop", toStopInput.value);
-      window.location.href = "http://127.0.0.1:5500/Ticket-Booking/index.html";
+      window.location.href = "https://idyllic-druid-c0a009.netlify.app/index.html";
     }
   }
 
