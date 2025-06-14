@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const totaTicketPrise = document.getElementById("total-ticket-price");
   const ticketPriseDetail = document.getElementById("ticket-price-detail");
   const totalUpiPayment = document.getElementById("total-upi-payment"); 
+  const totalpricePayment = document.getElementById("total-price-payment");
 
   function setActiveTicketDetails() {
     const activeTicketDetails = JSON.parse(localStorage.getItem("ActiveTicket"));
@@ -90,8 +91,9 @@ document.addEventListener("DOMContentLoaded", function() {
     if (orderIdWrapper) orderIdWrapper.innerText = orderId;
     if (totaTicketPrise) totaTicketPrise.innerText = activeTicketDetails.numberOfTickets * activeTicketDetails.prise;
     if (ticketPrise) ticketPrise.innerText = activeTicketDetails.numberOfTickets * activeTicketDetails.prise;
-    if (ticketPriseDetail) ticketPriseDetail.innerText = activeTicketDetails.numberOfTickets * activeTicketDetails.prise;
+    if (ticketPriseDetail) ticketPriseDetail.innerText = activeTicketDetails.prise;
     if (totalUpiPayment) totalUpiPayment.innerText = activeTicketDetails.numberOfTickets * activeTicketDetails.prise;
+    if (totalpricePayment) totalpricePayment.innerText = activeTicketDetails.numberOfTickets * activeTicketDetails.prise;
   }
 
   function generateOrderId() {
