@@ -26,7 +26,7 @@
 }
 
 .light-blue {
-  background-color: blue;
+  background-color: #2F2E47;
   /* Light blue color */
   width: 15px;
   /* Size for light blue dots */
@@ -35,7 +35,7 @@
 }
 
 .aqua {
-  background-color: #00FFFF;
+  background-color: #00D5EE;
   /* Aqua color */
   width: 10px;
   /* Smaller size for aqua dots */
