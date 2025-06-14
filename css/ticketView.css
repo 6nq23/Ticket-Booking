@@ -257,7 +257,7 @@ body {
   cursor: pointer;
   height: 50px;
   width: -webkit-fill-available;
-  background-color: var(--primary-color);
+  background-color: #00baf2;
 }
 
 #view-tickets-button:hover {

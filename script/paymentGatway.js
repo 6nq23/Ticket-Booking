@@ -1,20 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const headerPrise = document.getElementById('total-prise-in-header');
-  const paySecurlyRate = document.getElementById('pay-securly-rate');
+  const headerPrice = document.getElementById('total-prise-in-header');
+  const paySecurelyRate = document.getElementById('pay-securly-rate');
 
-  function changeData(){
+  function changeData() {
     const tempTicketDetailsRaw = localStorage.getItem('tempTicketDetails');
-    console.log("tempTicketDetailsRaw:", tempTicketDetailsRaw); // Debug log
-  
     if (!tempTicketDetailsRaw) return;
-  
+
     const tempTicketDetails = JSON.parse(tempTicketDetailsRaw);
-  
-    const prise = parseFloat(localStorage.getItem('prise')) || 0;
-  
-    if (headerPrise) headerPrise.innerText = prise * tempTicketDetails.numberOfTickets;
-    if (paySecurlyRate) paySecurlyRate.innerText = prise * tempTicketDetails.numberOfTickets;
+    const price = parseFloat(localStorage.getItem('price')) || 0;
+    const numberOfTickets = parseInt(tempTicketDetails.numberOfTickets) || 1;
+    const totalAmount = price * numberOfTickets;
+
+    if (headerPrice) headerPrice.innerText = totalAmount;
+    if (paySecurelyRate) paySecurelyRate.innerText = totalAmount;
   }
-  
+
   changeData();
 });

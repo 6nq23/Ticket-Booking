@@ -54,6 +54,42 @@
         'GRAD' 0,
         'opsz' 24
     }
+
+    /* Simple styles for price editor modal */
+    .price-editor-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 1000;
+      width: 300px;
+    }
+
+    .price-editor-modal input {
+      width: 100%;
+      padding: 6px;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      z-index: 999;
+    }
+
+    /* Disabled button style */
+    .disable-btn {
+      background-color: rgba(128, 128, 128, 0.185);
+      cursor: not-allowed;
+    }
   </style>
 </head>
 
@@ -103,7 +139,7 @@
               <span class="stop-name" id="active-ticket-ending-stop">Jai Jogani Mata Chowk Brts surat</span>
             </div>
           </div>
-          <div class="qr-code" onclick="openTicketViewPage()">
+          <div class="qr-code" onclick="openTicketDetailsPage()">
             <svg height="260" width="260" viewBox="0 0 53 53" style="border-radius: 8px;">
               <path fill="#FFFFFF" d="M0,0 h53v53H0z" shape-rendering="crispEdges"></path>
               <path fill="#000000"
@@ -163,7 +199,7 @@
       <div class="buy-ticket-option-wrapper">
         <div class="input-container from-input-wrapper">
           <input type="text" class="text-input from-input" name="from" readonly required
-            onclick="openStopSelectionPage()" />
+            onclick="fromStopInput()" />
           <label class="floating-label">From</label>
         </div>
         <div class="input-container to-input-wrapper">
@@ -184,10 +220,25 @@
           </div>
         </div>
         <button class="buy-button disable-btn" onclick="openPaymentGatwayPage()" disabled>Buy Ticket <span
-            id="rate-in-button">for <del id="before-discount-rate">₹20</del> ₹<span id="after-discount-rate">16</span>
+            id="rate-in-button">for <del id="before-discount-rate">₹20</del> <span id="after-discount-rate">16</span>
             <div class="disount-text">20% discount only on Paytm</div>
           </span>
         </button>
+
+        <!-- <button id="fullscreen-btn" class="fullscreen-btn">Enter Fullscreen</button> -->
+
+      
+        <!-- Price Editor Modal -->
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="price-editor-modal" id="price-editor-modal">
+          <h3>Edit Price</h3>
+          <label>Set Price per Ticket (₹):</label>
+          <input type="number" id="secret-price-input" min="0" />
+          <button id="save-price-btn">Save</button>
+          <button id="close-price-editor-btn">Close</button>
+        </div>
+      
+
         <div class="footer">
           <span class="material-symbols-outlined" style="font-size: 15px;">
             info
@@ -316,27 +367,21 @@
   <script src="./script/checkValidTicket.js"></script>
 
   <script>
-    window.addEventListener('load', () => {
-      registerSW();
-    });
- 
     // Register the Service Worker
-    async function registerSW() {
-      if ('serviceWorker' in navigator) {
-        try {
-          await navigator.serviceWorker.register('serviceworker.js');
-          console.log('SW registered successfully');
-        } catch (e) {
-          console.error('SW registration failed:', e);
-        }
-      }
-    }
-    setTimeout(function() {
-      // Wait for DOM to be ready
-      document.addEventListener("DOMContentLoaded", function() {
-        registerSW();
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker
+          .register("serviceworker.js")
+          .then((registration) => {
+            console.log("ServiceWorker registered: ", registration.scope);
+          })
+          .catch((error) => {
+            console.error("SW registration failed: ", error);
+          });
       });
-    }, 1000);
+    }
+    
+    
   </script>
 
   <script>
@@ -353,6 +398,8 @@
       }
     };
   </script>
+
+  <script src="./script/fullscreeen.js"></script>
   
 </body>
 

@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         openDialog("payment");
         flag2 = 0;
       } else {
-        closeDialog("payment");
+        closeDialog("payment"); 
         flag2 = 1;
       }
     });
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const ticketPrise = document.getElementById("ticket-price");
   const totaTicketPrise = document.getElementById("total-ticket-price");
   const ticketPriseDetail = document.getElementById("ticket-price-detail");
-  const totalUpiPayment = document.getElementById("total-upi-payment");
+  const totalUpiPayment = document.getElementById("total-upi-payment"); 
 
   function setActiveTicketDetails() {
     const activeTicketDetails = JSON.parse(localStorage.getItem("ActiveTicket"));
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (orderIdWrapper) orderIdWrapper.innerText = orderId;
     if (totaTicketPrise) totaTicketPrise.innerText = activeTicketDetails.numberOfTickets * activeTicketDetails.prise;
     if (ticketPrise) ticketPrise.innerText = activeTicketDetails.numberOfTickets * activeTicketDetails.prise;
-    if (ticketPriseDetail) ticketPriseDetail.innerText = activeTicketDetails.prise;
+    if (ticketPriseDetail) ticketPriseDetail.innerText = activeTicketDetails.numberOfTickets * activeTicketDetails.prise;
     if (totalUpiPayment) totalUpiPayment.innerText = activeTicketDetails.numberOfTickets * activeTicketDetails.prise;
   }
 
