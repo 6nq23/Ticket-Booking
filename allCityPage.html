@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>cities</title>
     <link rel="stylesheet" href="./css/allCityPage.css">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#00baf2">
+    <link rel="apple-touch-icon" href="./images/paytmlogonew192.png">
+    <link rel="icon" type="image/png" href="./images/paytmlogonew192.png">
 </head>
 
 <body>
@@ -79,8 +83,16 @@
           }
         };
       </script>
-      <script src="./script/fullscreeen.js"></script>
-
+    <script src="./script/fullscreeen.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./serviceworker.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed', err));
+            });
+        }
+    </script>
 </body>
 
 </html>

@@ -11,6 +11,10 @@
   <link rel="stylesheet" href="./css/flotingLableInput.css">
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/stopSelection.css">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#00baf2">
+  <link rel="apple-touch-icon" href="./images/paytmlogonew192.png">
+  <link rel="icon" type="image/png" href="./images/paytmlogonew192.png">
 </head>
 
 <body>
@@ -38,6 +42,15 @@
   </div>
 
 
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./serviceworker.js')
+          .then(reg => console.log('Service Worker registered'))
+          .catch(err => console.log('Service Worker registration failed', err));
+      });
+    }
+  </script>
 </body>
 <script src="./script/flotingLabel.js"></script>
 <script src="./script/stopSelection.js"></script>
