@@ -1,4 +1,4 @@
-const CACHE_NAME = "ticket-app-cache-v1";
+const CACHE_NAME = "ticket-app-cache-v2";
 const urlsToCache = [
   "./",
   "./index.html",
@@ -12,7 +12,6 @@ const urlsToCache = [
   "./stopSelection.html",
   "./ticketDetails.html",
   "./css/homePage.css",
-  "./css/style.css",
   "./css/AllPastTicketViewPage.css",
   "./css/allCityPage.css",
   "./css/buyingSteps.css",
