@@ -11,9 +11,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
-  // Prompt to re-enter fullscreen if previously enabled
-  if (localStorage.getItem("fullscreenEnabled") === "true") {
-    // alert("Please click the 'Enter Fullscreen' button to continue in fullscreen mode.");
-  }
 });
