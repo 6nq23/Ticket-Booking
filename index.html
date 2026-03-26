@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="./css/loader.css">
   <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#00baf2">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Paytm">
   <link rel="apple-touch-icon" href="./images/paytmlogonew192.png">
   <link rel="icon" type="image/png" href="./images/paytmlogonew192.png">
 </head>
@@ -53,6 +56,7 @@
             </div>
           </div>
           <button class="update-btn">Update Now</button>
+          <button id="pwa-install-btn" class="update-btn" style="display: none; background: #002e6e; margin-top: 8px;">Install App</button>
         </div>
 
         <div class="promo-banner">
@@ -397,12 +401,64 @@
 
   <script src="./script/homePage.js"></script>
   <script>
+    let deferredPrompt;
+    const installBtn = document.getElementById('pwa-install-btn');
+
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./serviceworker.js')
-          .then(reg => console.log('Service Worker registered'))
-          .catch(err => console.log('Service Worker registration failed', err));
+          .then(reg => {
+            console.log('SW: Registered', reg.scope);
+          })
+          .catch(err => {
+            console.error('SW: Registration failed', err);
+          });
       });
+    }
+
+    // Handle the install prompt
+    window.addEventListener('beforeinstallprompt', (e) => {
+      console.log('PWA: beforeinstallprompt fired');
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault();
+      // Stash the event so it can be triggered later.
+      deferredPrompt = e;
+      // Update UI notify the user they can add to home screen
+      if (installBtn) {
+        installBtn.style.display = 'block';
+      }
+    });
+
+    if (installBtn) {
+      installBtn.addEventListener('click', (e) => {
+        // hide our user interface that shows our A2HS button
+        installBtn.style.display = 'none';
+        // Show the prompt
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          // Wait for the user to respond to the prompt
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('PWA: User accepted the install prompt');
+            } else {
+              console.log('PWA: User dismissed the install prompt');
+            }
+            deferredPrompt = null;
+          });
+        }
+      });
+    }
+
+    window.addEventListener('appinstalled', (evt) => {
+      console.log('PWA: Application installed');
+    });
+
+    // Debugging: Log manifest status
+    const manifestLink = document.querySelector('link[rel="manifest"]');
+    if (manifestLink) {
+      console.log('PWA: Manifest linked at', manifestLink.href);
+    } else {
+      console.error('PWA: Manifest NOT linked!');
     }
   </script>
 </body>
