@@ -1,0 +1,75 @@
+.buying-info-btn {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 150px;
+  margin-bottom: 15px;
+}
+
+.buying-info-btn img {
+  height: 18px;
+}
+
+.buying-info-btn p {
+  font-weight: 600;
+  flex: 1;
+  margin: 10px 0;
+}
+
+.buying-info-btn span {
+  font-size: 20px;
+}
+
+/* TICKET BOOKING STEPS BY VIVEK */
+.ticket-buying-steps-wrapper {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.steps-heading {
+  margin: 0px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-buying-steps-wrapper h4 {
+  font-size: 13px;
+}
+
+.steps-sub-heading {
+  margin-bottom: 0px;
+  margin-top: 14px;
+}
+
+.steps-description {
+  font-size: 13px;
+  margin-top: 12px;
+  font-weight: lighter;
+}
+
+.icon {
+  padding: 10px;
+  border: 1px solid rgb(240, 238, 238);
+  border-radius: 10px;
+}
+
+.ticket-buying-steps {
+  padding-left: 60px;
+}
+
+#step1 {
+  position: absolute;
+  margin: 8.5% 0 0 -15%;
+}
+
+#step2 {
+  position: absolute;
+  margin: 5.5% 0 0 -15%;
+}
+
+#step3 {
+  position: absolute;
+  margin: 3.5% 0 0 -15%;
+}

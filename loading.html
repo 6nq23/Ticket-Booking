@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Custom Loading Effect</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff;
+            margin: 0;
+        }
+
+        .loading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 75px;
+        }
+
+        .dot {
+            border-radius: 50%;
+            animation: bounce 1.2s infinite ease-in-out;
+        }
+
+        .light-blue {
+            background-color: #2F2E47;
+            /* Light blue color */
+            width: 15px;
+            /* Size for light blue dots */
+            height: 15px;
+            /* Size for light blue dots */
+        }
+
+        .aqua {
+            background-color: #00D5EE;
+            /* Aqua color */
+            width: 10px;
+            /* Smaller size for aqua dots */
+            height: 10px;
+            /* Smaller size for aqua dots */
+        }
+
+        .dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .dot:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .dot:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: scale(0.5); }
+            50% { transform: scale(1); }
+        }
+
+        /* Error Modal styles (Premium) */
+        .error-modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(4px);
+            display: none; justify-content: center; align-items: center; z-index: 10000;
+        }
+        .error-modal {
+            background: white; width: 85%; max-width: 320px; border-radius: 20px;
+            padding: 30px 20px; text-align: center; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            font-family: 'Inter', sans-serif;
+        }
+        .error-icon { width: 60px; height: 60px; background: #fff8eb; color: #ff9800; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; }
+        .error-modal h3 { font-size: 18px; font-weight: 800; margin-bottom: 12px; color: #1d252d; }
+        .error-modal p { font-size: 14px; color: #4e5b66; margin-bottom: 25px; line-height: 1.5; }
+        .error-close-btn { background: #00baf2; color: white; border: none; width: 100%; padding: 12px; border-radius: 12px; font-size: 15px; font-weight: 700; cursor: pointer; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <div class="loading" id="loader-content">
+        <div class="dot light-blue"></div>
+        <div class="dot light-blue"></div>
+        <div class="dot light-blue"></div>
+        <div class="dot aqua"></div>
+        <div class="dot aqua"></div>
+    </div>
+
+    <!-- Error Modal -->
+    <div class="error-modal-overlay" id="error-modal">
+        <div class="error-modal">
+            <div class="error-icon">
+                <span class="material-symbols-outlined">warning</span>
+            </div>
+            <h3>Server Error</h3>
+            <p>We are facing some technical issues with <span id="service-name">this service</span>. Please try again after some time.</p>
+            <button class="error-close-btn" onclick="location.href='./index.html'">OK</button>
+        </div>
+    </div>
+
+    <script>
+        // Simulate "Some Time" wait (10 seconds)
+        setTimeout(() => {
+            const loader = document.getElementById('loader-content');
+            const modal = document.getElementById('error-modal');
+            if (loader) loader.style.display = 'none';
+            if (modal) modal.style.display = 'flex';
+            
+            // Extract service name from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const service = urlParams.get('service');
+            if (service) {
+                document.getElementById('service-name').innerText = service;
+            }
+        }, 10000); 
+    </script>
+    <script src="./script/fullscreeen.js"></script>
+
+</body>
+
+</html>

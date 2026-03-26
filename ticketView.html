@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Paytm Ticket Confirmation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="./css/ticketView.css">
+  <link rel="stylesheet" href="./css/commonStyles.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <div class="confirmation-container">
+    <div class="loader-container">
+      <div class="loading">
+        <div class="dot light-blue"></div>
+        <div class="dot light-blue"></div>
+        <div class="dot light-blue"></div>
+        <div class="dot aqua"></div>
+        <div class="dot aqua"></div>
+      </div>
+    </div>
+    <div class="header">
+      <span class="material-symbols-outlined" onclick="backToHome()"> arrow_back </span>
+      <img src="./images/logo.png" alt="Paytm" id="paytm-logo">
+      <span id="help-link" class="help-btn" onclick="openHelpPage()"">Help</span>
+    </div>
+    <div class="ticket-details">
+      <div id="ticket-operator-logo">
+        <img src="./images/sitilink-logo.png" alt="Operator Logo">
+      </div>
+      <div class="route-details">
+        <div class="from-location" id="from-location">Anuvrat Dwar</div>
+        <span class="material-symbols-outlined" style="color: black;">
+          arrow_forward
+        </span>
+        <div class="to-location" id="to-location">Someshwar Junction</div>
+      </div>
+      <div class="ticket-info">
+        <span id="ticket-type"><span id="active-ticket-count-1">1</span> Adult Ticket</span>
+        <div class="boy-icon-container">
+          <img src="./images/boy.png" class="boy-image" alt="boy image">
+          <h2 class="ticket-count-in-confirmation-dialog" id="active-ticket-count-2">1</h2>
+        </div>
+        <div class="ticket-verified-price">
+          ₹<span id="total-ticket-price" style="letter-spacing: -3px;">15</span>
+          <img src="./images/verified.svg" alt="">
+        </div>
+        <div id="success-message">TICKET BOOKED SUCCESSFULLY</div>
+        <div id="booking-time">04 Jul 2024, 07:42 AM</div>
+      </div>
+      <div class="ticket-timer-and-btn-wrapper">
+        <div class="ticket-validity">
+          <span>Your ticket is valid for</span>
+          <div id="countdown-timer">
+            <span id="hours">02</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+          </div>
+        </div>
+        <div class="countdown-timer-labels">
+          <span>HOURS</span>
+          <span>MINUTES</span>
+          <span>SECONDS</span>
+        </div>
+        <button id="view-tickets-button" onclick="openTicketDetailPage()">View your Tickets</button>
+      </div>
+    </div>
+
+    <div class="ticket-confirmation-detail-view">
+      <div class="trip-detail-wrapper open-wrapper">
+        <div class="trip-detail-heading-wrapper">
+          <h3> Trip Details </h3>
+          <span class="material-symbols-outlined arrow-down changing-arrow1">
+            keyboard_arrow_down
+          </span>
+        </div>
+        <p class="operator-name-labe ticket-detail-sub-title"> OPERATOR </p>
+        <h4 class="operator-name-value"> Surat Sitilink </h4>
+        <p style="border-bottom: 1px dotted #b9b4c0; margin-left: 10px;"> </p>
+        <h4 class="order-id"> Order ID: <span id="order-id">23769600084</span> <span style="color: #00acf1;"> copy
+          </span></h4>
+        <p class="inquairy-info-text"> For any queries regarding QR Ticket, please contact <br> Surat Sitilink with
+          Order Id.</p>
+      </div>
+
+      <div class="payment-wrapper open-wrapper">
+        <div class="payment-detail-heading-wrapper">
+          <h3> Payment Details </h3>
+          <span class="material-symbols-outlined arrow-down changing-arrow2">
+            keyboard_arrow_down
+          </span>
+        </div>
+
+        <p class="ticket-detail-sub-title"> FARE BREAKUP </p>
+        <h4> <span id="total-tocket-count">1</span> X Adult <span style="position: absolute; right: 25px;"> &#8377;<span
+              id="ticket-price-detail">4</span> </span> </h4>
+        <p style="border-bottom: 0.5px solid #b9b4c0;  margin-left: 10px;"> </p>
+        <h4> Total <span style="position: absolute; right: 26px;"> &#8377;<span id="total-price-payment">4</span> </span>
+        </h4>
+        <p style="border-bottom: 1px dotted #b9b4c0;  margin-left: 10px;"> </p>
+        <p class="ticket-detail-sub-title"> PAYMENT MODE </p>
+        <h4> UPI Linked Bank Account <span style="position: absolute; right: 26px;"> &#8377;<span
+              id="total-upi-payment">4</span> </span> </h4>
+        <h5 style="opacity: 75%; margin-bottom: 10px;"> Transaction ID: 4552004139545 </h5>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/dayjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/plugin/duration.min.js"></script>
+  <script src="./script/ticketView.js"></script>
+  <script src="./script/script.js"></script>
+  <script src="./script/timer.js"></script>
+  <script>
+    window.onload = function () {
+      const loader = document.querySelector(".loader-container");
+      if (loader) {
+        loader.style.display = "none";
+      }
+  
+      // Show your main content here if it's hidden
+      const mainContent = document.querySelector(".container"); // adjust selector
+      if (mainContent) {
+        mainContent.style.display = "block";
+      }
+    };
+  </script>
+  <script src="./script/fullscreeen.js"></script>
+
+</body>
+
+</html>

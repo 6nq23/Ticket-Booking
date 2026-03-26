@@ -1,0 +1,84 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family:sans-serif;
+  box-sizing: border-box;
+}
+.back{
+  margin: 25px 15px 15px;
+}
+h2{
+  padding: 0 17px 10px;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.city{
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  gap: 10px;
+}
+.cityname  p{
+  font-weight: 600;
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+hr{
+  width: 292px;
+  margin-bottom:-16px;
+  opacity: 0.2;
+}
+.new{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.add{
+  background-color:#25b87bff;
+  height: 24px;
+  padding: 4px 12px;
+  margin-bottom: 22px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+}
+.travel{
+  position: relative;
+}
+.content{
+  position: absolute;
+  border: 2px red;
+  top: 22px;
+  left: 21px;
+  }
+.content p{
+  color: #00baf2;
+  font-size: 14px;
+  font-weight: 600;
+  }
+.content h4{
+  color: #172b75ff;
+  }
+.content button{
+  margin: 6px 0;
+  color: white;
+  background-color: #33ad5eff;
+  padding: 2px 20px;
+  font-size: 17px;
+  border: 0;
+  border-radius: 16px;
+  font-weight: bold;
+  }
+.travel{
+  background-image: url('./../images/bus.png');
+  background-size:cover;
+  height: 122px;
+  width: 355px;
+  margin: 25px 10px;
+  border-radius: 15px;
+}
+.travel > img{
+  border-radius: 15px;
+}
